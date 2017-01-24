@@ -1,0 +1,11 @@
+{% extends template.self %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+    .btn.pull-right.js-toolbar-action,
+    .dropdown.pull-right.js-toolbar-action {
+    	display: none;
+    }
+    </style>
+{% endblock %}

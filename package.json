@@ -1,0 +1,14 @@
+{
+  "name": "vServer",
+  "repository": "https://github.com/vcpsh/vServer",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "gitbook-cli": "^2.3.0"
+  },
+  "scripts": {
+    "docs:serve": "gitbook serve docs",
+    "docs:build": "gitbook build docs",
+    "scripts:generate": "rm -rf scripts && node docsParser.js --harmony && chmod -R +x scripts"
+  }
+}
