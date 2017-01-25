@@ -1,4 +1,5 @@
 # Dokumentation - Hosting - vcpsh
 
-Hier können wir die coole Dokumentation schreiben.
-Genaueres folgt noch.
+This is our Documentation.
+
+It is created from all Markdown files in docs or any subdirectory. All files that gitbook should include need a reference in SUMMARY.MD.
