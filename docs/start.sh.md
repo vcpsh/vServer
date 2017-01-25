@@ -1,8 +1,12 @@
 # Startskript
-Dieses Startskript wird beim Start des Servers ausgeführt.
+This scripts start all Services
+
+- nginx-proxy
+- letsencrypt container
 
 
 ``` bash
 #!/bin/bash
 docker start nginx-proxy
+docker start letsencrypt
 ```
