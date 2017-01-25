@@ -6,7 +6,8 @@ To forward an other docker file use:
 >    -e "VIRTUAL_HOST=example.com,www.example.com,mail.example.com" \
 >    -e "LETSENCRYPT_HOST=example.com,www.example.com,mail.example.com" \
 >    -e "LETSENCRYPT_EMAIL=foo@bar.com" \
->    webdevops/php-nginx
+>    -e "VIRTUAL_PROTO=https" \
+>webdevops/php-nginx
 
 If you want to create test certificates that don't have the 5 certs/week/domain limits define the LETSENCRYPT_TEST environment variable with a value of true.
 
@@ -18,7 +19,7 @@ We use this for the proxy [https://github.com/jwilder/nginx-proxy](https://githu
 >
 >$ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 >
->Then start any containers you want proxied with an env var >VIRTUAL_HOST=subdomain.youdomain.com
+>Then start any containers you want proxied with an env var > VIRTUAL_HOST=subdomain.youdomain.com
 >
 >$ docker run -e VIRTUAL_HOST=foo.bar.com  ...
 >
@@ -43,7 +44,7 @@ docker run -d -p 80:80 -p 443:443 \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     jwilder/nginx-proxy
 
-docker create -t letsencrypt \
+docker create --name letsencrypt \
         -v /path/to/certs:/etc/nginx/certs:rw \
         --volumes-from nginx-proxy \
         -v /var/run/docker.sock:/var/run/docker.sock:ro \
