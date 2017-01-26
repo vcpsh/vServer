@@ -10,5 +10,4 @@ Und manchmal auch ein Code Block
 #!/bin/bash
 echo "Hello, World!"
 ```
-
 Und dannach geht es einfach normal weiter.
