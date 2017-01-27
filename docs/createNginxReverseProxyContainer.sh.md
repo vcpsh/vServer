@@ -36,7 +36,7 @@ test certificates
 
 ``` bash
 #!/bin/bash
-docker run -d -p 80:80 -p 443:443 \
+docker create -p 80:80 -p 443:443 \
     --name nginx-proxy \
     -v /path/to/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
