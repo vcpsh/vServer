@@ -42,6 +42,8 @@ docker create -p 80:80 -p 443:443 \
     -v /etc/nginx/vhost.d \
     -v /usr/share/nginx/html \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
+    -e VIRTUAL_PROTO=https \
+    -e DEFAULT_HOST=vcp-sh.de \
     jwilder/nginx-proxy
 
 docker create --name letsencrypt \
