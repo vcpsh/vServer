@@ -9,4 +9,5 @@ This scripts start all Services
 #!/bin/bash
 docker start nginx-proxy
 docker start letsencrypt
+docker start mysql
 ```
