@@ -8,6 +8,7 @@ How to use it:
 * Copy the file to `ownconfig.cfg.md` and set your own config
 
 ```` bash
+domain="vcp-sh.de"
 sql_root_password="password"
 
 source ./ownconfig.cfg
