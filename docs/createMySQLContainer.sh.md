@@ -1,6 +1,7 @@
 # Create MySQL server docker container
-
+We use this (https://hub.docker.com/_/mysql/) Image
 ```` bash
 #!/bin/bash
-docker create -v /var/data/mysql:/var/lib/mysql--name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes -d mysql:latest
+source ./config.cfg
+docker create -v /var/data/mysql:/var/lib/mysql --name mysql -e MYSQL_ROOT_PASSWORD=$sql_root_password mysql:latest
 ````
