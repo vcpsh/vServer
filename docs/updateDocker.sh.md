@@ -6,6 +6,7 @@ Call update script and start all container
 #!/bin/bash
 ./updateNginxReverseProxyContainer.sh
 ./updateMysqlDocker.sh
+./updatePhpMyadmin.sh
 
 ./start.sh
 ````

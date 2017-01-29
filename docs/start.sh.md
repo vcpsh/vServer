@@ -10,4 +10,5 @@ This scripts start all Services
 docker start nginx-proxy
 docker start letsencrypt
 docker start mysql
+docker start sqladmin
 ```
