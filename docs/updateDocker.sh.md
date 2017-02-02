@@ -7,6 +7,7 @@ Call update script and start all container
 ./updateNginxReverseProxyContainer.sh
 ./updateMysqlDocker.sh
 ./updatePhpMyadmin.sh
+./updateNextcloudDocker.sh
 
 ./start.sh
 ````

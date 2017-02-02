@@ -8,10 +8,21 @@ How to use it:
 * Copy the file to `ownconfig.cfg.md` and set your own config
 
 ```` bash
+
 domain=vcp-sh.de
 sql_root_password=password
+#Letsencrypt
 LETSENCRYPT_TEST=false #Create test certificate?
 adminmail=internet@vcp-sh.de
 debug=false
-source ./ownconfig.cfg
+
+#nextcloud
+nextcloud_password=superpasswordisbetterthannormalpassword
+nextcloud_db_user=nextcloud
+nextcloud_db_name=nextcloud
+nextcloud_db_password=anotherstrongpassword
+nextcloud_uid=1000
+nextcloud_gid=1000
+nextcloud_tag=10.0 #tag for the containter 
+source ./ownconfig.cfg #Import your own config. Mind delete this line in your own config.
 ````
