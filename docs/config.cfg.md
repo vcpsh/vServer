@@ -10,6 +10,8 @@ How to use it:
 ```` bash
 domain=vcp-sh.de
 sql_root_password=password
-
+LETSENCRYPT_TEST=false #Create test certificate?
+adminmail=internet@vcp-sh.de
+debug=false
 source ./ownconfig.cfg
 ````
