@@ -5,7 +5,7 @@ For the nextcloud docker container we use this image https://hub.docker.com/r/wo
 
 ```` bash
 #!/bin/bash
-source $(dirname $0)./config.cfg
+source $(dirname $0)/config.cfg
 #Create folder when they not exists
 mkdir -p /var/data/nextcloud/data
 mkdir -p /var/data/nextcloud/config
@@ -33,10 +33,10 @@ docker create --name nextcloud \
        -e DB_USER=$nextcloud_db_user \
        -e DB_PASSWORD=$nextcloud_db_password \
        -e DB_HOST=db_nextcloud \
-       -e VIRTUAL_HOST=$myresult \
+       -e "VIRTUAL_HOST=$myresult" \
        --expose 8080 \
        -e LETSENCRYPT_TEST=$LETSENCRYPT_TEST \
-       -e LETSENCRYPT_HOST=$myresult \
+       -e "LETSENCRYPT_HOST=$myresult" \
        -e LETSENCRYPT_EMAIL=$adminmail \
        wonderfall/nextcloud:$nextcloud_tag
 

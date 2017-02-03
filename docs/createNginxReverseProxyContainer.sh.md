@@ -37,14 +37,14 @@ test certificates
 
 ``` bash
 #!/bin/bash
-source $(dirname $0)./config.cfg
+source $(dirname $0)/config.cfg
 docker create -p 80:80 -p 443:443 \
     --name nginx-proxy \
     -v /path/to/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
     -v /usr/share/nginx/html \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
-    -e DEFAULT_HOST=$domain \
+    -e DEFAULT_HOST=$domain[0] \
     jwilder/nginx-proxy
 
 docker create --name letsencrypt \

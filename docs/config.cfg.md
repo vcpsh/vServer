@@ -8,9 +8,10 @@ How to use it:
 * Copy the file to `ownconfig.cfg.md` and set your own config
 
 ```` bash
-#Domain stugg
+#Domain stuff
 domains[0]=vcp-sh.de
 domains[1]=vcp.sh
+VIRTUAL_PROTO=https
 
 org_name="\"VCP Schleswig-Holstein\""
 #Letsencrypt
