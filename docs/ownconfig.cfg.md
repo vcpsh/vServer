@@ -52,5 +52,4 @@ function createDomainNames {
 #subdomains[1]="test2"
 #createDomainNames $subdomains
 #echo $myresult
-source $(dirname $0)/ownconfig.cfg #Import your own config. Mind delete this line in your own config.
 ````
