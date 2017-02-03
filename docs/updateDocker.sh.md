@@ -8,6 +8,7 @@ $(dirname $0)./updateNginxReverseProxyContainer.sh
 $(dirname $0)./updateMysqlDocker.sh
 $(dirname $0)./updatePhpMyadmin.sh
 $(dirname $0)./updateNextcloudDocker.sh
+$(dirname $0)./updateVCP.sh.Docker.sh
 
 ./start.sh
 ````
