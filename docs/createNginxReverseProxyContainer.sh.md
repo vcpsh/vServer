@@ -44,7 +44,7 @@ docker create -p 80:80 -p 443:443 \
     -v /etc/nginx/vhost.d \
     -v /usr/share/nginx/html \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
-    -e DEFAULT_HOST=$domain[0] \
+    -e DEFAULT_HOST=${domains[0]} \
     jwilder/nginx-proxy
 
 docker create --name letsencrypt \
