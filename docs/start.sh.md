@@ -12,4 +12,5 @@ docker start letsencrypt
 docker start mysql
 docker start sqladmin
 docker start nextcloud
+docker start slapd
 ```

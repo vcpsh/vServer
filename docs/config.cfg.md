@@ -12,7 +12,9 @@ How to use it:
 domains[0]=vcp-sh.de
 domains[1]=vcp.sh
 
-VIRTUAL_PROTO=https #(http or https)
+domain=vcp-sh.de
+
+org_name=VCP Schleswig-Holstein
 #Letsencrypt
 LETSENCRYPT_TEST=false #Create test certificate?
 adminmail=internet@vcp-sh.de
@@ -29,6 +31,9 @@ nextcloud_db_password=anotherstrongpassword
 nextcloud_uid=1000
 nextcloud_gid=1000
 nextcloud_tag=10.0 #tag for the containter
+
+#ldap
+ldap_rootpass=verySecureAndSecretPassword
 
 #Input Array of Subdomains,
 #Output: String subdomain1.domain1, ... ,subdomain1.domainN,..., subdomainMdomainN
