@@ -9,8 +9,8 @@ How to use it:
 
 ```` bash
 #Domain stuff
-domains[0]=vcp-sh.de
-domains[1]=vcp.sh
+domains[0]=vcp.sh
+domains[1]=vcp-sh.de
 VIRTUAL_PROTO=https
 
 org_name="\"VCP Schleswig-Holstein\""
