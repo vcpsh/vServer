@@ -50,9 +50,9 @@ function createDomainNames {
   myresult=${domainstring%?}
 
 }
-subdomains[0]="test1"
-subdomains[1]="test2"
-createDomainNames $subdomains
-echo $myresult
+#subdomains[0]="test1"
+#subdomains[1]="test2"
+#createDomainNames $subdomains
+#echo $myresult
 source ./ownconfig.cfg #Import your own config. Mind delete this line in your own config.
 ````
