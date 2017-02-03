@@ -1,12 +1,13 @@
 # create reverse proxy
 This Scripts create a nginx-proxy container and container for lets encrypt.
 To forward an other docker file use:
->docker run -d \
+>docker create \
 >    --name example-app \
 >    -e "VIRTUAL_HOST=example.com,www.example.com,mail.example.com" \
 >    -e "LETSENCRYPT_HOST=example.com,www.example.com,mail.example.com" \
 >    -e "LETSENCRYPT_EMAIL=foo@bar.com" \
 >    -e "VIRTUAL_PROTO=https" \
+>    -- expose 80
 >webdevops/php-nginx
 
 If you want to create test certificates that don't have the 5 certs/week/domain limits define the LETSENCRYPT_TEST environment variable with a value of true.

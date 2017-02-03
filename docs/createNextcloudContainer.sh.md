@@ -11,6 +11,9 @@ mkdir -p /var/data/nextcloud/data
 mkdir -p /var/data/nextcloud/config
 mkdir -p /var/data/nextcloud/apps
 
+subdomains[0]="cloud"
+createDomainNames $subdomains
+
 docker create --name nextcloud \
        --link mysql:db_nextcloud \
        -v /var/data/nextcloud/data:/data \
@@ -30,10 +33,10 @@ docker create --name nextcloud \
        -e DB_USER=$nextcloud_db_user \
        -e DB_PASSWORD=$nextcloud_db_password \
        -e DB_HOST=db_nextcloud \
-       -e VIRTUAL_HOST=cloud.$domain \
+       -e VIRTUAL_HOST=$myresult \
        --expose 8080 \
        -e LETSENCRYPT_TEST=$LETSENCRYPT_TEST \
-       -e LETSENCRYPT_HOST=cloud.$domain \
+       -e LETSENCRYPT_HOST=$myresult \
        -e LETSENCRYPT_EMAIL=$adminmail \
        wonderfall/nextcloud:$nextcloud_tag
 
