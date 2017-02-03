@@ -10,5 +10,5 @@ docker rm nginx-proxy
 docker pull jrcs/letsencrypt-nginx-proxy-companion
 docker stop letsencrypt
 docker rm letsencrypt
-./createNginxReverseProxyContainer.sh
+$(dirname $0)./createNginxReverseProxyContainer.sh
 ````

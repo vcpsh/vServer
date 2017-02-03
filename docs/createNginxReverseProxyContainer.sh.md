@@ -36,7 +36,7 @@ test certificates
 
 ``` bash
 #!/bin/bash
-source ./config.cfg
+source $(dirname $0)./config.cfg
 docker create -p 80:80 -p 443:443 \
     --name nginx-proxy \
     -v /path/to/certs:/etc/nginx/certs:ro \

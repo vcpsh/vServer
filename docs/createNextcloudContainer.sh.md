@@ -5,7 +5,7 @@ For the nextcloud docker container we use this image https://hub.docker.com/r/wo
 
 ```` bash
 #!/bin/bash
-source ./config.cfg
+source $(dirname $0)./config.cfg
 #Create folder when they not exists
 mkdir -p /var/data/nextcloud/data
 mkdir -p /var/data/nextcloud/config

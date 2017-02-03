@@ -11,7 +11,7 @@ How to use it:
 
 domain=vcp-sh.de
 sql_root_password=password
-org_name=VCP Schleswig-Holstein
+org_name="VCP Schleswig-Holstein"
 #Letsencrypt
 LETSENCRYPT_TEST=false #Create test certificate?
 adminmail=internet@vcp-sh.de
@@ -29,5 +29,5 @@ nextcloud_tag=10.0 #tag for the containter
 #ldap
 ldap_rootpass=verySecureAndSecretPassword
 
-source ./ownconfig.cfg #Import your own config. Mind delete this line in your own config.
+source $(dirname $0)/ownconfig.cfg #Import your own config. Mind delete this line in your own config.
 ````
