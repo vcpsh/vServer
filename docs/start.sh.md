@@ -15,4 +15,5 @@ docker start nextcloud
 docker start slapd
 docker start vcp.sh
 docker start pfila.vcp.sh
+docker start piwik.vcp.sh
 ```
