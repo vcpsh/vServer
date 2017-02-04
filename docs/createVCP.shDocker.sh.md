@@ -12,10 +12,10 @@ docker create --name vcp.sh \
     -e "LETSENCRYPT_HOST=${domains[0]} , ${domains[1]}" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "HTTPS_METHOD=noredirect" \
     --link mysql:mysql \
-    --expose 443 \
+    --expose 80 \
     -v /var/data/vcp.sh/www:/app \
-    -e "VIRTUAL_PROTO=https" \
 webdevops/php-nginx:ubuntu-14.04
 #- \
 
