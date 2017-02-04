@@ -13,7 +13,7 @@ mkdir -p /var/data/ldap/data
 mkdir -p /var/data/ldap/config
 
 # weird permission issue
-chgrp -R 106 /var/data/ldap/
+chown -R 106 /var/data/ldap/
 chmod -R 760 /var/data/ldap
 
 docker create --name slapd \
