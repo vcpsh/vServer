@@ -13,6 +13,7 @@ docker create --name vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     --link mysql:mysql \
+    --link slapd:ldap \
     --expose 80 \
     -v /var/data/vcp.sh/www:/app \
 webdevops/php-nginx:ubuntu-14.04
