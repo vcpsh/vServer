@@ -12,6 +12,7 @@ mkdir -p /var/data/ldap/data
 docker create --name slapd \
 -v /var/data/ldap/data/:/var/lib/ldap \
 -v /var/data/ldap/config:/etc/ldap \
+-p 389:389
 -e "VIRTUAL_HOST=ldap.${domain[0]}" \
 -e "LETSENCRYPT_HOST=ldap.${domains[0]}" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
