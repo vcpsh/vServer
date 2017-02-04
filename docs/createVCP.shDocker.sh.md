@@ -13,9 +13,10 @@ docker create --name vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     --link mysql:mysql \
-    --expose 80 \
+    --expose 443 \
     -v /var/data/vcp.sh/www:/app \
+    -e "VIRTUAL_PROTO=https" \
 webdevops/php-nginx:ubuntu-14.04
-#-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
+#- \
 
 ````
