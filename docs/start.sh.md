@@ -14,4 +14,5 @@ docker start sqladmin
 docker start nextcloud
 docker start slapd
 docker start vcp.sh
+docker start pfila.vcp.sh
 ```
