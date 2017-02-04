@@ -19,6 +19,7 @@ docker create --name pfila.vcp.sh \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/pfila.vcp.sh/www:/app \
+    -v /var/data/pfila.vcp.sh/php.ini:/opt/docker/etc/php/php.ini
 webdevops/php-nginx:ubuntu-14.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 

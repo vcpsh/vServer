@@ -9,6 +9,6 @@ $(dirname $0)/updateMysqlDocker.sh
 $(dirname $0)/updatePhpMyadmin.sh
 $(dirname $0)/updateNextcloudDocker.sh
 $(dirname $0)/updateVCP.shDocker.sh
-$(dirname $0)/updatePfila.vcp.shDocker.sh
+$(dirname $0)/updatePfila.v cp.shDocker.sh
 ./start.sh
 ````
