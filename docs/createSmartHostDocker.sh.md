@@ -5,7 +5,7 @@ This one: https://hub.docker.com/r/lirt/smart-host-postfix-docker/
 source $(dirname $0)/config.cfg
 
 docker create \
-   --name smarthost
+   --name smarthost \
    -h smarthost.vcp.sh \
    -p 8025:25 \
    -e HOSTNAME=smarthost.vcp.sh \
