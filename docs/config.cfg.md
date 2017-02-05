@@ -31,6 +31,11 @@ nextcloud_uid=1000
 nextcloud_gid=1000
 nextcloud_tag=11.0 #tag for the containter
 
+#Smarthost stuff
+smarthost_password=wedontneednopassword
+smarthost_username="catchall@vcp.sh"
+
+
 #Input Array of Subdomains,
 #Output: String subdomain1.domain1, ... ,subdomain1.domainN,..., subdomainMdomainN
 function createDomainNames {
