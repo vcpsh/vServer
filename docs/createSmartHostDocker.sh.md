@@ -13,7 +13,7 @@ docker create \
    -e USERNAME=$smarthost_username \
    -e PASSWORD="$smarthost_password" \
    -e MYNETWORKS="172.17.0.0/24 172.20.100.0/24 172.20.101.12 172.20.101.13" \
-   -d lirt/smart-host-postfix-docker
+    lirt/smart-host-postfix-docker
 
 
 ```
