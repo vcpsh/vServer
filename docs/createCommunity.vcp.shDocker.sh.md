@@ -19,7 +19,7 @@ docker create --name community.vcp.sh \
     --link slapd:slapd \
     --link mysql:mysql
     --expose 80 \
-    -v /var/data/community.vcp.sh/www:/app \
+    -v /var/data/community_vcp_sh/www/public:/app \
 webdevops/php-nginx:ubuntu-16.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 
