@@ -20,6 +20,7 @@ docker create --name community.vcp.sh \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/community_vcp_sh/www/public:/app \
+    -e "HTTPS_METHOD=noredirect"
 webdevops/php-nginx:ubuntu-16.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 
