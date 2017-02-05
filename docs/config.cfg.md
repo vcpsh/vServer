@@ -29,10 +29,7 @@ nextcloud_db_name=nextcloud
 nextcloud_db_password=anotherstrongpassword
 nextcloud_uid=1000
 nextcloud_gid=1000
-nextcloud_tag=10.0 #tag for the containter
-
-#ldap
-ldap_rootpass=verySecureAndSecretPassword
+nextcloud_tag=11.0 #tag for the containter
 
 #Input Array of Subdomains,
 #Output: String subdomain1.domain1, ... ,subdomain1.domainN,..., subdomainMdomainN
