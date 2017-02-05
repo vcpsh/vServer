@@ -17,7 +17,7 @@ docker create --name community.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     --link slapd:slapd \
-    --link mysql:mysql
+    --link mysql:mysql \
     --expose 80 \
     -v /var/data/community_vcp_sh/www/public:/app \
 webdevops/php-nginx:ubuntu-16.04
