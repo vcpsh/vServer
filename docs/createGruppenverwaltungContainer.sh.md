@@ -15,6 +15,7 @@ docker create --name gruppenverwaltung \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "HTTPS_METHOD=noredirect" \
     --link slapd:slapd \
     --expose 80 \
     -v /var/data/gruppenverwaltung/www:/app \
