@@ -7,7 +7,7 @@ This scripts start all Services
 
 ``` bash
 #!/bin/bash
-
+docker start smarthost
 docker start mail-forwarder
 
 docker start nginx-proxy
