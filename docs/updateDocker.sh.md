@@ -12,5 +12,7 @@ $(dirname $0)/updateVCP.shDocker.sh
 $(dirname $0)/updatePfila.vcp.shDocker.sh
 $(dirname $0)/updatePiwik.vcp.shDocker.sh
 $(dirname $0)/updateCommunity.vcp.shDocker.sh
+
+$(dirname $0)/updateMailForwarder.sh
 $(dirname $0)/start.sh
 ````

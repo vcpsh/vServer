@@ -7,6 +7,9 @@ This scripts start all Services
 
 ``` bash
 #!/bin/bash
+
+docker start mail-forwarder
+
 docker start nginx-proxy
 docker start letsencrypt
 docker start mysql
