@@ -8,6 +8,7 @@ mkdir -p /var/data/pfila.vcp.sh/www/public
 subdomains[0]="pfila"
 subdomains[1]="anmeldung"
 subdomains[2]="pfingstlager"
+subdomains[3]="landeslager"
 createDomainNames $subdomains
 
 
