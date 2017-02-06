@@ -16,6 +16,7 @@ docker create --name pfila.vcp.sh \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "HTTPS_METHOD=noredirect" \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/pfila.vcp.sh/www:/app \
