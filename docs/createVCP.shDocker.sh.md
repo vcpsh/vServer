@@ -5,6 +5,10 @@ LDAP Extension is enabled. This is important for the login with the ldap Server
 ```` bash
 #!/bin/bash
 source $(dirname $0)/config.cfg
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P` #Get the Fullpath
+popd > /dev/null
+
 mkdir -p /var/data/vcp.sh/www/public
 
 docker create --name vcp.sh \
@@ -16,7 +20,7 @@ docker create --name vcp.sh \
     --link slapd:ldap \
     --expose 80 \
     -v /var/data/vcp.sh/www:/app \
-    -v /home/internet/vServer/scripts/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
+    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
 webdevops/php-nginx:ubuntu-14.04
 #- \
 
