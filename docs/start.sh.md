@@ -21,4 +21,5 @@ docker start pfila.vcp.sh
 docker start piwik.vcp.sh
 docker start gruppenverwaltung
 docker start community.vcp.sh
+docker start diefalken.vcp.sh
 ```
