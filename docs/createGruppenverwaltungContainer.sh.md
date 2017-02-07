@@ -9,7 +9,9 @@ subdomains[0]="gruppenverwaltung"
 subdomains[1]="gv"
 
 createDomainNames $subdomains
-
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P` #Get the Fullpath
+popd > /dev/null
 docker create --name gruppenverwaltung \
     -e "VIRTUAL_HOST=$myresult" \
     -e "LETSENCRYPT_HOST=$myresult" \
@@ -20,6 +22,7 @@ docker create --name gruppenverwaltung \
     --expose 80 \
     -v /var/data/gruppenverwaltung/www:/app \
     -v /var/data/gruppenverwaltung/php.ini:/opt/docker/etc/php/php.ini \
+    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
 webdevops/php-nginx:ubuntu-16.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 

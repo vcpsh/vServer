@@ -10,6 +10,9 @@ subdomains[1]="community"
 subdomains[2]="forum"
 
 createDomainNames $subdomains
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P` #Get the Fullpath
+popd > /dev/null
 
 docker create --name community.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
@@ -20,6 +23,7 @@ docker create --name community.vcp.sh \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/community_vcp_sh/www:/app \
+    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
     -e "HTTPS_METHOD=noredirect" \
 webdevops/php-nginx:ubuntu-14.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \

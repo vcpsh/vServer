@@ -11,6 +11,9 @@ subdomains[2]="pfingstlager"
 subdomains[3]="landeslager"
 createDomainNames $subdomains
 
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P` #Get the Fullpath
+popd > /dev/null
 
 docker create --name pfila.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
@@ -22,6 +25,7 @@ docker create --name pfila.vcp.sh \
     --expose 80 \
     -v /var/data/pfila.vcp.sh/www:/app \
     -v /var/data/pfila.vcp.sh/php.ini:/opt/docker/etc/php/php.ini \
+    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
 webdevops/php-nginx:ubuntu-14.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 
