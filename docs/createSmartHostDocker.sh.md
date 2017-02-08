@@ -6,9 +6,9 @@ source $(dirname $0)/config.cfg
 
 docker create \
    --name smarthost \
-   -h vcp.sh \
+   -h smarthost.vcp.sh \
    -p 8025:25 \
-   -e HOSTNAME=vcp.sh \
+   -e HOSTNAME="smathost.vcp.sh" \
    -e RELAY_HOST=mail.vcp.sh \
    -e USERNAME=$smarthost_username \
    -e PASSWORD="$smarthost_password" \
