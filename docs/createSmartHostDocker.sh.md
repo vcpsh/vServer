@@ -8,7 +8,7 @@ docker create \
    --name smarthost \
    -h smarthost.vcp.sh \
    -p 8025:25 \
-   -e HOSTNAME="smathost.vcp.sh" \
+   -e HOSTNAME="smarthost.vcp.sh" \
    -e RELAY_HOST=mail.vcp.sh \
    -e USERNAME=$smarthost_username \
    -e PASSWORD="$smarthost_password" \
