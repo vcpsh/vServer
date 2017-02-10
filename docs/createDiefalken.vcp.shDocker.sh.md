@@ -19,7 +19,6 @@ docker create --name diefalken.vcp.sh \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
-    --link slapd:slapd \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/diefalken_vcp_sh/www:/app \
@@ -27,5 +26,4 @@ docker create --name diefalken.vcp.sh \
     -e "HTTPS_METHOD=noredirect" \
 webdevops/php-nginx:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
-
 ````
