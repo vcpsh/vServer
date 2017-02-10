@@ -6,4 +6,5 @@ useradd -m $USERNAME
 mkdir -p /home/$USERNAME/www/public
 mkdir -p /var/data/$USERNAME
 ln -s /home/$USERNAME/www /var/data/$USERNAME
+service sshd reload
 ```
