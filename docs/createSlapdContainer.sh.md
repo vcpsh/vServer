@@ -22,6 +22,3 @@ docker create --name slapd \
 -p 389:389 \
 vcpsh/slapd:latest
 ```
--e "LETSENCRYPT_HOST=ldap.${domains[0]}" \
--e "LETSENCRYPT_EMAIL=$adminmail" \
--e "VIRTUAL_HOST=ldap.${domain[0]}" \
