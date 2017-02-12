@@ -16,6 +16,7 @@ $(dirname $0)/updatePiwik.vcp.shDocker.sh
 $(dirname $0)/updatePhpMyadmin.sh
 
 $(dirname $0)/updateDiefalken.vcp.shDocker.sh
+$(dirname $0)/updateFreepolisContainer.sh
 
 $(dirname $0)/updateCommunity.vcp.shDocker.sh
 $(dirname $0)/updateNextcloudDocker.sh

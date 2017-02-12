@@ -8,3 +8,8 @@ SMF_RELAYHOST='smarthost'
 docker create --name "mail-forwarder" -e SMF_RELAYHOST=$SMF_RELAYHOST -e SMF_CONFIG="$SMF_CONFIG" -p 25:25 --link smarthost:smarthost zixia/simple-mail-forwarder
 
 ````
+
+#main.cf
+sender_canonical_maps = regexp:/etc/postfix/sender_canonical_maps
+#sender_canonical_maps
+/.+/  relay@vcp.sh
