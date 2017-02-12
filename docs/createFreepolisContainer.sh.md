@@ -13,7 +13,7 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P` #Get the Fullpath
 popd > /dev/null
 
-docker create --name freepolis \
+docker create --name freepolis.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
