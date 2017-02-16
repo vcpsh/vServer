@@ -20,7 +20,7 @@ docker create --name vcp.sh \
     --link slapd:ldap \
     --expose 80 \
     -v /var/data/vcp.sh/www:/app \
-    -v SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
+    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
 webdevops/php-nginx:ubuntu-14.04
 #- \
 
