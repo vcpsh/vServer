@@ -26,6 +26,7 @@ $(dirname $0)/updateVCP.shDocker.sh
 
 $(dirname $0)/updateMailForwarder.sh
 $(dirname $0)/updateSmarthost.sh
+$(dirname $0)/updateWebsiteRedirect.sh
 
 $(dirname $0)/start.sh
 ````
