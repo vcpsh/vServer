@@ -13,6 +13,10 @@ domains[0]=vcp.sh
 domains[1]=vcp-sh.de
 VIRTUAL_PROTO=https
 
+REDIRECTDOMAINS="Domain1from, domain2from:domain1to;domain11from:domain2to"
+
+
+
 org_name="\"VCP Schleswig-Holstein\""
 #Letsencrypt
 LETSENCRYPT_TEST=false #Create test certificate?
