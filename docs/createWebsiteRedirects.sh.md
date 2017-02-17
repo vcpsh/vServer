@@ -70,7 +70,7 @@ config="$config }"
 mkdir -p /var/data/websiteRedirects
 echo "$config" > /var/data/websiteRedirects/nginx.conf
 
-docker create --name website-redirects -e "VIRTUAL_HOST=$domainlistfrom" --expose 80 -v /var/data/websiteRedirects/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
+docker create --name website-redirects -e HTTPS_METHOD=nohttps -e "VIRTUAL_HOST=$domainlistfrom" --expose 80 -v /var/data/websiteRedirects/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
 
 
 
