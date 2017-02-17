@@ -19,7 +19,7 @@ function createServerBlock {
 }
 
 
-config=""
+config="http { "
 domainlistfrom=""
 IFS=';' read -ra WEBSITES <<< "$REDIRECTDOMAINS"
 
@@ -35,7 +35,7 @@ for WEBSITE in "${WEBSITES[@]}"; do
 
     done
 done
-domainlistfrom=${domainlistfrom%?}
+domainlistfrom="${domainlistfrom%?}}"
 #echo $config
 #echo $domainlistfrom
 
