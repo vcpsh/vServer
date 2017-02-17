@@ -33,7 +33,7 @@ To use automaticaly lets encrpt we need this docker https://github.com/JrCs/dock
 
 test certificates
 
-TODO: move the nginx config in the repo.
+TODO: move the nginx config in the repo. With `client_max_body_size 512M;`
 
 ``` bash
 #!/bin/bash
@@ -43,7 +43,6 @@ docker create -p 80:80 -p 443:443 \
     -e ENABLE_IPV6=true \
     -v /var/data/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
-    -v /var/data/config/nginxReverseProxy.conf:/etc/nginx/nginx.conf \
     -v /usr/share/nginx/html \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     jwilder/nginx-proxy
