@@ -35,7 +35,8 @@ for WEBSITE in "${WEBSITES[@]}"; do
 
     done
 done
-domainlistfrom="${domainlistfrom%?}}"
+domainlistfrom="${domainlistfrom%?}"
+config="$config }"
 #echo $config
 #echo $domainlistfrom
 
