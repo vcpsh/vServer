@@ -32,3 +32,12 @@ This is a list of domains/subdomains used by us.
 | smarthost | smarthost |
 | sqladmin | sqladmin |
 | teillager | freepolis.vcp.sh |
+
+
+## Weiterleitung
+The Container website-redirects redirects the Domains
+In generel www.* to *
+
+| From | TO |
+| --------- | --------- |
+|www.domainname|domainname|

@@ -58,7 +58,7 @@ for WEBSITE in "${WEBSITES[@]}"; do
     for FROM in "${domainsto[@]}"; do
       createServerBlock $FROM $to
       config="$config $blockstring"
-      domainlistfrom="$domainlistfrom $FROM,"
+      domainlistfrom="$domainlistfrom$FROM,"
     done
 done
 domainlistfrom="${domainlistfrom%?}"
