@@ -14,7 +14,7 @@ function createServerBlock {
   blockstring="server {
       server_name $domainfrom;
       listen 80;
-      return 301 \$scheme://$domainTo\$request_uri;
+      return 301 \$http://$domainTo\$request_uri;
   }"
 }
 
