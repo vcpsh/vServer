@@ -16,8 +16,6 @@ popd > /dev/null
 
 docker create --name diefalken.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
-    -e "LETSENCRYPT_HOST=$myresult" \
-    -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     --link mysql:mysql \
     --link smarthost:smarthost \
@@ -28,3 +26,5 @@ docker create --name diefalken.vcp.sh \
 webdevops/php-nginx:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
+-e "LETSENCRYPT_HOST=$myresult" \
+-e "LETSENCRYPT_EMAIL=$adminmail" \

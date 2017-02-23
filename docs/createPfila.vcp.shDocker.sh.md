@@ -17,8 +17,6 @@ popd > /dev/null
 
 docker create --name pfila.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
-    -e "LETSENCRYPT_HOST=$myresult" \
-    -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     -e "HTTPS_METHOD=noredirect" \
     --link mysql:mysql \
@@ -30,3 +28,5 @@ webdevops/php-nginx:ubuntu-14.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 
 ````
+-e "LETSENCRYPT_HOST=$myresult" \
+-e "LETSENCRYPT_EMAIL=$adminmail" \

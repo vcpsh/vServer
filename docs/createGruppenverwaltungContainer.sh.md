@@ -14,8 +14,6 @@ SCRIPTPATH=`pwd -P` #Get the Fullpath
 popd > /dev/null
 docker create --name gruppenverwaltung \
     -e "VIRTUAL_HOST=$myresult" \
-    -e "LETSENCRYPT_HOST=$myresult" \
-    -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     -e "HTTPS_METHOD=noredirect" \
     --link slapd:slapd \
@@ -27,3 +25,5 @@ webdevops/php-nginx:ubuntu-16.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 
 ````
+-e "LETSENCRYPT_HOST=$myresult" \
+-e "LETSENCRYPT_EMAIL=$adminmail" \

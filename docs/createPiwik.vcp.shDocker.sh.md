@@ -11,10 +11,10 @@ createDomainNames $subdomains
 docker create --name piwik.vcp.sh \
     --link mysql:db \
     -e "VIRTUAL_HOST=$myresult" \
-    -e "LETSENCRYPT_HOST=$myresult" \
-    -e "LETSENCRYPT_EMAIL=$adminmail" \
     --expose 80 \
     -e "HTTPS_METHOD=noredirect" \
     piwik
 
 ````
+-e "LETSENCRYPT_HOST=$myresult" \
+-e "LETSENCRYPT_EMAIL=$adminmail" \
