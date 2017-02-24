@@ -17,6 +17,8 @@ popd > /dev/null
 docker create --name community.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "LETSENCRYPT_HOST=$myresult" \
+    -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link slapd:slapd \
     --link mysql:mysql \
     --expose 80 \
@@ -27,5 +29,3 @@ webdevops/php-nginx:ubuntu-14.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 
 ````
--e "LETSENCRYPT_HOST=$myresult" \
--e "LETSENCRYPT_EMAIL=$adminmail" \

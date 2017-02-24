@@ -39,11 +39,11 @@ docker create --name nextcloud \
        -e DB_PASSWORD=$nextcloud_db_password \
        -e DB_HOST=db_nextcloud \
        -e "VIRTUAL_HOST=$myresult" \
+       -e "LETSENCRYPT_HOST=$myresult" \
+       -e "LETSENCRYPT_EMAIL=$adminmail" \
        --expose 8888 \
        -e "HTTPS_METHOD=noredirect" \
        wonderfall/nextcloud:$nextcloud_tag
 
 ````
 -e LETSENCRYPT_TEST=$LETSENCRYPT_TEST \
--e "LETSENCRYPT_HOST=$myresult" \
--e LETSENCRYPT_EMAIL=$adminmail \

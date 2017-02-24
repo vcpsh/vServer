@@ -17,6 +17,8 @@ popd > /dev/null
 docker create --name lists.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "LETSENCRYPT_HOST=$myresult" \
+    -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/phplist/www:/app \
@@ -25,5 +27,3 @@ docker create --name lists.vcp.sh \
 webdevops/php-nginx:ubuntu-15.04
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
--e "LETSENCRYPT_HOST=$myresult" \
--e "LETSENCRYPT_EMAIL=$adminmail" \

@@ -13,8 +13,8 @@ docker create --name piwik.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
     --expose 80 \
     -e "HTTPS_METHOD=noredirect" \
+    -e "LETSENCRYPT_HOST=$myresult" \
+    -e "LETSENCRYPT_EMAIL=$adminmail" \
     piwik
 
 ````
--e "LETSENCRYPT_HOST=$myresult" \
--e "LETSENCRYPT_EMAIL=$adminmail" \
