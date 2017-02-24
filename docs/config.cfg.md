@@ -49,7 +49,7 @@ function createDomainNames {
     do
       for domain in "${domains[@]}"
       do
-        domainstring="$domainstring $subdomain.$domain,"
+        domainstring="$domainstring$subdomain.$domain,"
       done
   done
   myresult=${domainstring%?}
