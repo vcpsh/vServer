@@ -19,6 +19,9 @@ $(dirname $0)/updateDiefalken.vcp.shDocker.sh
 $(dirname $0)/updateFreepolisContainer.sh
 
 $(dirname $0)/updateCommunity.vcp.shDocker.sh
+$(dirname $0)/updateRedis-nextcloudContainer.sh
+docker start nextcloud-redis
+
 $(dirname $0)/updateNextcloudDocker.sh
 $(dirname $0)/updatePfila.vcp.shDocker.sh
 

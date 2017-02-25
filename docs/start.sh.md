@@ -12,7 +12,7 @@ docker start mail-forwarder
 docker start nginx-proxy
 docker start letsencrypt
 docker start sqladmin
-
+docker start nextcloud-redis
 docker start nextcloud
 docker start vcp.sh
 docker start pfila.vcp.sh
