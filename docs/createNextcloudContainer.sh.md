@@ -21,7 +21,7 @@ createDomainNames $subdomains
 docker create --name nextcloud \
        --link mysql:db_nextcloud \
        --link slapd:slapd \
-       -link redis:redis \
+       -link nextcloud-redis:redis \
        -v /var/data/nextcloud/data:/data \
        -v /var/data/nextcloud/config:/config \
        -v /var/data/nextcloud/apps:/apps2 \
