@@ -23,7 +23,6 @@ docker create --name averliekers.vcp.sh \
     --expose 80 \
     -v /var/data/averliekers/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
-    -e "HTTPS_METHOD=noredirect" \
 webdevops/php-nginx:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````

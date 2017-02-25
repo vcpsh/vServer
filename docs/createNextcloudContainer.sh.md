@@ -43,7 +43,6 @@ docker create --name nextcloud \
        -e "LETSENCRYPT_HOST=$myresult" \
        -e "LETSENCRYPT_EMAIL=$adminmail" \
        --expose 8888 \
-       -e "HTTPS_METHOD=noredirect" \
        wonderfall/nextcloud:$nextcloud_tag
 
 ````
