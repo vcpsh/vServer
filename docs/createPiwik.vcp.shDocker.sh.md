@@ -8,6 +8,21 @@ subdomains[0]="piwik"
 subdomains[1]="analytics"
 createDomainNames $subdomains
 
+docker create
+ --expose 80 \
+ --link mysql:mysql \
+ --name piwik.vcp.sh \
+ -e "VIRTUAL_HOST=$myresult" \
+ -e "LETSENCRYPT_HOST=$myresult" \
+ -e "LETSENCRYPT_EMAIL=$adminmail" \
+ -e "PIWIK_MYSQL_USER=piwik" \
+ -e "PIWIK_MYSQL_PASSWORD=$PIWIK_MYSQL_PASSWORD"
+ marvambass/piwik
+
+
+````
+old code
+
 docker create --name piwik.vcp.sh \
     --link mysql:db \
     -e "VIRTUAL_HOST=$myresult" \
@@ -15,5 +30,3 @@ docker create --name piwik.vcp.sh \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     piwik
-
-````

@@ -22,7 +22,7 @@ org_name="\"VCP Schleswig-Holstein\""
 LETSENCRYPT_TEST=false #Create test certificate?
 adminmail=internet@vcp-sh.de
 debug=false
-
+PIWIK_MYSQL_PASSWORD="qwertzui" #best password ever
 
 sql_root_password=password
 
