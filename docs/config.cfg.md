@@ -40,6 +40,12 @@ smarthost_password=wedontneednopassword
 smarthost_username="catchall@vcp.sh"
 SMF_CONFIG=""
 
+#Icinga stuff
+ICINGA_PASSWORD=ineedapasswordimholdingputforapassword
+ICINGAWEB2_PASSWORD=wennichdichsehdanndenkichaneinpasswort
+DIRECTOR_PASSWORD=imheretomakeapassword
+IDO_PASSWORD=weneedbetterpasswords
+ICINGAWEB2_ADMIN_PASS=creativepassword
 #Input Array of Subdomains,
 #Output: String subdomain1.domain1, ... ,subdomain1.domainN,..., subdomainMdomainN
 function createDomainNames {
