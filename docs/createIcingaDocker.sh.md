@@ -3,6 +3,7 @@ Monitoring Software
 https://hub.docker.com/r/jordan/icinga2/
 
 ``` bash
+#!/bin/bash
 source $(dirname $0)/config.cfg
 
 mkdir -p /var/data/icinga.vcp.sh/
