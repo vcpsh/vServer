@@ -14,7 +14,7 @@ createDomainNames $subdomains
 
 docker create \
  --expose 80 \
- --name icinga.vcp.sh
+ --name icinga.vcp.sh \
  -e "VIRTUAL_HOST=$myresult" \
  -e "LETSENCRYPT_HOST=$myresult" \
  -e "LETSENCRYPT_EMAIL=$adminmail" \
@@ -27,8 +27,8 @@ docker create \
   -e "DIRECTOR_PASSWORD=$DIRECTOR_PASSWORD" \
   -e "IDO_PASSWORD=$IDO_PASSWORD" \
   -e "ICINGAWEB2_ADMIN_USER=admin" \
-  -e "ICINGAWEB2_ADMIN_PASS=$ICINGAWEB2_ADMIN_PASS"
-  -v /var/data/icinga.vcp.sh/sql:/var/lib/mysql
+  -e "ICINGAWEB2_ADMIN_PASS=$ICINGAWEB2_ADMIN_PASS" \
+  -v /var/data/icinga.vcp.sh/sql:/var/lib/mysql \
   jordan/icinga2:latest
 
 ```
