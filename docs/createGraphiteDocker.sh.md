@@ -2,7 +2,7 @@
 
 ``` bash
 #!/bin/bash
- docker create\
+ docker create \
   --name graphite \
   sitespeedio/graphite
 
