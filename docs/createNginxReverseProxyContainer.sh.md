@@ -44,6 +44,7 @@ docker create -p 80:80 -p 443:443 \
     -v /var/data/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
     -v /usr/share/nginx/html \
+    -v $(dirname $0)/nginxproxy.conf:/etc/nginx/conf.d/nginxproxy.conf \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     jwilder/nginx-proxy
 
