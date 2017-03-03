@@ -4,6 +4,6 @@
 #!/bin/bash
  docker create \
   --name graphite \
-  sitespeedio/graphite
+  hopsoft/graphite-statsd
 
 ```
