@@ -1,6 +1,7 @@
 # Icinga
 Monitoring Software
 https://hub.docker.com/r/jordan/icinga2/
+Creates a config file for ssmtp in /var/data/icinga.vcp.sh/conf/ssmtp.conf
 
 ``` bash
 #!/bin/bash
@@ -8,6 +9,16 @@ source $(dirname $0)/config.cfg
 
 mkdir -p /var/data/icinga.vcp.sh/
 mkdir -p /var/data/icinga.vcp.sh/sql
+echo "
+root=relay@vcp.sh
+mailhub=mxf960.netcup.net:587
+UseSTARTTLS=YES
+AuthUser=relay@vcp.sh
+AuthPass=$smarthost_password
+FromLineOverride=NO
+" > /var/data/icinga.vcp.sh/conf/ssmtp.conf
+
+
 
 subdomains[0]="icinga"
 subdomains[1]="monitoring"
@@ -31,6 +42,7 @@ docker create \
   -e "ICINGAWEB2_ADMIN_USER=admin" \
   -e "ICINGAWEB2_ADMIN_PASS=$ICINGAWEB2_ADMIN_PASS" \
   -v /var/data/icinga.vcp.sh/sql:/var/lib/mysql \
+  -v /var/data/icinga.vcp.sh/conf/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro \
   jordan/icinga2:latest
 
 ```
