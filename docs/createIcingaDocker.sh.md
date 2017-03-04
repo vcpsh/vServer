@@ -45,6 +45,7 @@ object UserGroup \"icingaadmins\" {
 }
 " > /var/data/icinga.vcp.sh/conf/users.conf
 
+
 subdomains[0]="icinga"/var/data/icinga.vcp.sh/conf/
 subdomains[1]="monitoring"
 createDomainNames $subdomains
@@ -69,7 +70,7 @@ docker create \
   -v /var/data/icinga.vcp.sh/sql:/var/lib/mysql \
   -v /var/data/icinga.vcp.sh/conf/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro \
   -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
-  -v /var/data/icinga.vcp.sh/conf/users.conf:/etc/icinga2/conf.d/users.conf:ro \
   jordan/icinga2:latest
 
 ```
+-v /var/data/icinga.vcp.sh/conf/users.conf:/etc/icinga2/conf.d/users.conf:ro \
