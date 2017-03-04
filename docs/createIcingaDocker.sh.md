@@ -9,6 +9,7 @@ source $(dirname $0)/config.cfg
 
 mkdir -p /var/data/icinga.vcp.sh/
 mkdir -p /var/data/icinga.vcp.sh/sql
+mkdir -p /var/data/icinga.vcp.sh/conf/
 echo "
 root=relay@vcp.sh
 mailhub=mxf960.netcup.net:587
