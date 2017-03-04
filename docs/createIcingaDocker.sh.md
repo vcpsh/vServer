@@ -19,7 +19,9 @@ AuthPass=$smarthost_password
 FromLineOverride=NO
 " > /var/data/icinga.vcp.sh/conf/ssmtp.conf
 
-
+echo "root:relay@vcp.sh:smtp.internet@vcp.sh
+nagios:relay@vcp.sh:smtp.internet@vcp.sh
+www-data:relay@vcp.sh:smtp.internet@vcp.sh" > /var/data/icinga.vcp.sh/conf/revaliases
 
 subdomains[0]="icinga"
 subdomains[1]="monitoring"
@@ -44,6 +46,7 @@ docker create \
   -e "ICINGAWEB2_ADMIN_PASS=$ICINGAWEB2_ADMIN_PASS" \
   -v /var/data/icinga.vcp.sh/sql:/var/lib/mysql \
   -v /var/data/icinga.vcp.sh/conf/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro \
+  -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
   jordan/icinga2:latest
 
 ```
