@@ -21,4 +21,6 @@ docker start gruppenverwaltung
 docker start community.vcp.sh
 docker start diefalken.vcp.sh
 docker start website-redirects
+docker start graphite
+docker start icinga.vcp.sh
 ```
