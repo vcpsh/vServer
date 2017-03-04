@@ -19,9 +19,9 @@ AuthPass=$smarthost_password
 FromLineOverride=NO
 " > /var/data/icinga.vcp.sh/conf/ssmtp.conf
 
-echo "root:relay@vcp.sh:smtp.internet@vcp.sh
-nagios:relay@vcp.sh:smtp.internet@vcp.sh
-www-data:relay@vcp.sh:smtp.internet@vcp.sh" > /var/data/icinga.vcp.sh/conf/revaliases
+echo "root:relay@vcp.sh:mxf960.netcup.net
+nagios:relay@vcp.sh:mxf960.netcup.net
+www-data:relay@vcp.sh:mxf960.netcup.net" > /var/data/icinga.vcp.sh/conf/revaliases
 
 subdomains[0]="icinga"
 subdomains[1]="monitoring"
