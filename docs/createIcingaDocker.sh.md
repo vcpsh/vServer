@@ -10,6 +10,7 @@ source $(dirname $0)/config.cfg
 mkdir -p /var/data/icinga.vcp.sh/
 mkdir -p /var/data/icinga.vcp.sh/sql
 mkdir -p /var/data/icinga.vcp.sh/conf/
+#mailserver definition
 echo "
 root=relay@vcp.sh
 mailhub=mxf960.netcup.net:587
@@ -19,11 +20,32 @@ AuthPass=$smarthost_password
 FromLineOverride=NO
 " > /var/data/icinga.vcp.sh/conf/ssmtp.conf
 
+#remapping unix mails
 echo "root:relay@vcp.sh:mxf960.netcup.net
 nagios:relay@vcp.sh:mxf960.netcup.net
 www-data:relay@vcp.sh:mxf960.netcup.net" > /var/data/icinga.vcp.sh/conf/revaliases
 
-subdomains[0]="icinga"
+#User definition
+echo "/**
+ * The example user 'icingaadmin' and the example
+ * group 'icingaadmins'.
+ */
+
+object User \"icingaadmin\" {
+  import \"generic-user\"
+
+  display_name = \"Icinga 2 Admin\"
+  groups = [ \"icingaadmins\" ]
+
+  email = \"internet@vcp.sh\"
+}
+
+object UserGroup \"icingaadmins\" {
+  display_name = \"Icinga 2 Admin Group\"
+}
+" > /var/data/icinga.vcp.sh/conf/users.conf
+
+subdomains[0]="icinga"/var/data/icinga.vcp.sh/conf/
 subdomains[1]="monitoring"
 createDomainNames $subdomains
 
@@ -47,6 +69,7 @@ docker create \
   -v /var/data/icinga.vcp.sh/sql:/var/lib/mysql \
   -v /var/data/icinga.vcp.sh/conf/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro \
   -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
+  -v /var/data/icinga.vcp.sh/conf/user.conf:/etc/icinga2/conf.d/users.conf:ro \
   jordan/icinga2:latest
 
 ```
