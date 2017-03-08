@@ -461,7 +461,7 @@ docker create \
   -v /var/data/icinga.vcp.sh/conf/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro \
   -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
   -v /var/data/icinga.vcp.sh/conf:/etc/icinga2/conf.d:rw \
-  -v /var/data/icinga.vcp.sh/log:/var/log/
+  -v /var/data/icinga.vcp.sh/log:/var/log/ \
   jordan/icinga2:latest
 
 ```
