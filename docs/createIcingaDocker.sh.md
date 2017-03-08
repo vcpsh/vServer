@@ -159,30 +159,30 @@ echo "/*
  * used for apply rules for Service, Notification,
  * Dependency and ScheduledDowntime objects.
  *
- * Tip: Use `icinga2 object list --type Host` to
+ * Tip: Use 'icinga2 object list --type Host' to
  * list all host objects after running
- * configuration validation (`icinga2 daemon -C`).
+ * configuration validation ('icinga2 daemon -C').
  */
 
 /*
  * This is an example host based on your
  * local host's FQDN. Specify the NodeName
- * constant in `constants.conf` or use your
+ * constant in 'constants.conf' or use your
  * own description, e.g. \"db-host-1\".
  */
 
 object Host NodeName {
-  /* Import the default host template defined in `templates.conf`. */
+  /* Import the default host template defined in 'templates.conf'. */
   import \"generic-host\"
 
-  /* Specify the address attributes for checks e.g. `ssh` or `http`. */
+  /* Specify the address attributes for checks e.g. 'ssh' or 'http'. */
   address = \"127.0.0.1\"
   address6 = \"::1\"
 
-  /* Set custom attribute `os` for hostgroup assignment in `groups.conf`. */
+  /* Set custom attribute 'os' for hostgroup assignment in 'groups.conf'. */
   vars.os = \"Linux\"
 
-  /* Define http vhost attributes for service apply rules in `services.conf`. */
+  /* Define http vhost attributes for service apply rules in 'services.conf'. */
   vars.http_vhosts[\"http\"] = {
     http_uri = \"/\"
   }
@@ -191,7 +191,7 @@ object Host NodeName {
   //  http_uri = \"/icingaweb2\"
   //}
 
-  /* Define disks and attributes for service apply rules in `services.conf`. */
+  /* Define disks and attributes for service apply rules in 'services.conf'. */
   vars.disks[\"disk\"] = {
     /* No parameters. */
   }
@@ -199,9 +199,9 @@ object Host NodeName {
     disk_partitions = \"/\"
   }
 
-  /* Define notification mail attributes for notification apply rules in `notifications.conf`. */
+  /* Define notification mail attributes for notification apply rules in 'notifications.conf'. */
   vars.notification[\"mail\"] = {
-    /* The UserGroup `icingaadmins` is defined in `users.conf`. */
+    /* The UserGroup 'icingaadmins' is defined in 'users.conf'. */
     groups = [ \"icingaadmins\" ]
   }
 }
@@ -212,10 +212,10 @@ echo "/**
  * The example notification apply rules.
  *
  * Only applied if host/service objects have
- * the custom attribute `notification` defined
- * and containing `mail` as key.
+ * the custom attribute 'notification' defined
+ * and containing 'mail' as key.
  *
- * Check `hosts.conf` for an example.
+ * Check 'hosts.conf' for an example.
  */
 
 apply Notification \"mail-icingaadmin\" to Host {
@@ -277,26 +277,26 @@ apply Dependency \"satellite-host\" to Host {
 echo "/*
  * Service apply rules.
  *
- * The CheckCommand objects `ping4`, `ping6`, etc
+ * The CheckCommand objects 'ping4', 'ping6', etc
  * are provided by the plugin check command templates.
  * Check the documentation for details.
  *
- * Tip: Use `icinga2 object list --type Service` to
+ * Tip: Use 'icinga2 object list --type Service' to
  * list all service objects after running
- * configuration validation (`icinga2 daemon -C`).
+ * configuration validation ('icinga2 daemon -C').
  */
 
 /*
  * This is an example host based on your
  * local host's FQDN. Specify the NodeName
- * constant in `constants.conf` or use your
+ * constant in 'constants.conf' or use your
  * own description, e.g. \"db-host-1\".
  */
 
 /*
- * These are generic `ping4` and `ping6`
+ * These are generic 'ping4' and 'ping6'
  * checks applied to all hosts having the
- * `address` resp. `address6` attribute
+ * 'address' resp. 'address6' attribute
  * defined.
  */
 apply Service \"ping4\" {
@@ -316,9 +316,9 @@ apply Service \"ping6\" {
 }
 
 /*
- * Apply the `ssh` service to all hosts
- * with the `address` attribute defined and
- * the custom attribute `os` set to `Linux`.
+ * Apply the 'ssh' service to all hosts
+ * with the 'address' attribute defined and
+ * the custom attribute 'os' set to 'Linux'.
  */
 apply Service \"ssh\" {
   import \"generic-service\"
@@ -359,7 +359,7 @@ apply Service \"load\" {
 
   check_command = \"load\"
 
-  /* Used by the ScheduledDowntime apply rule in `downtimes.conf`. */
+  /* Used by the ScheduledDowntime apply rule in 'downtimes.conf'. */
   vars.backup_downtime = \"02:00-03:00\"
 
   assign where host.name == NodeName
