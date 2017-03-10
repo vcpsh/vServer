@@ -24,7 +24,7 @@ FromLineOverride=NO
 #remapping unix mails
 echo "root:relay@vcp.sh:mxf960.netcup.net
 nagios:relay@vcp.sh:mxf960.netcup.net
-www-data:relay@vcp.sh:mxf960.netcup.net" > /var/data/icinga.vcp.sh/conf/icinga/revaliases
+www-data:relay@vcp.sh:mxf960.netcup.net" > /var/data/icinga.vcp.sh/conf/revaliases
 
 #User definition
 echo "/**
