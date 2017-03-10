@@ -47,23 +47,6 @@ object UserGroup \"icingaadmins\" {
 }
 " > /var/data/icinga.vcp.sh/conf/icinga/users.conf
 
-echo "object ApiUser \"icinga2-director\" {
-  password = \"$icingaapipassword\"
-  permissions = [ \"*\" ]
-}
-" > /var/data/icinga.vcp.sh/conf/icinga/api-user.conf
-
-echo "/**
- * The APIUser objects are used for authentication against the API.
- */
-object ApiUser \"root\" {
-  password = \"$icingaapipassword\"
-  // client_cn = \"\"
-
-  permissions = [ \"*\" ]
-}
-" > /var/data/icinga.vcp.sh/conf/icinga/api-users.conf
-
 
 echo "object IcingaApplication \"app\" { }
 " > /var/data/icinga.vcp.sh/conf/icinga/app.conf
@@ -462,7 +445,7 @@ docker create \
   -v /var/data/icinga.vcp.sh/conf/ssmtp.conf:/etc/ssmtp/ssmtp.conf:ro \
   -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
   -v /var/data/icinga.vcp.sh/log/:/var/log/ \
-  -v /var/data/icinga.vcp.sh/conf/icinga/:/etc/icinga2/conf.d/ \
+  -v /var/data/icinga.vcp.sh/conf/icinga/:/etc/icinga2/conf/ \
   jordan/icinga2:latest
 
 ```
