@@ -24,6 +24,7 @@ docker start website-redirects
 docker start lists.vcp.sh
 docker start freepolis.vcp.sh
 docker start averliekers.vcp.sh
+docker start s.vcp.sh
 
 docker start graphite
 docker start icinga.vcp.sh

@@ -17,6 +17,8 @@ $(dirname $0)/updatePhpMyadmin.sh
 
 $(dirname $0)/updateDiefalken.vcp.shDocker.sh
 $(dirname $0)/updateFreepolisContainer.sh
+$(dirname $0)/updateAverliekers.vcp.sh.
+$(dirname $0)/updateUrlShortener.sh
 
 $(dirname $0)/updateCommunity.vcp.shDocker.sh
 $(dirname $0)/updateRedis-nextcloudContainer.sh
