@@ -38,13 +38,17 @@ TODO: move the nginx config in the repo. With `client_max_body_size 512M;`
 ``` bash
 #!/bin/bash
 source $(dirname $0)/config.cfg
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P` #Get the Fullpath
+popd > /dev/null
+
 docker create -p 80:80 -p 443:443 \
     --name nginx-proxy \
     -e ENABLE_IPV6=true \
     -v /var/data/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
     -v /usr/share/nginx/html \
-    -v $(dirname $0)/nginxproxy.conf:/etc/nginx/conf.d/nginxproxy.conf \
+    -v $SCRIPTPATH/nginxproxy.conf:/etc/nginx/conf.d/nginxproxy.conf \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     jwilder/nginx-proxy
 
