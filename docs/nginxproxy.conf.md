@@ -6,6 +6,5 @@ client_max_body_size 2G;
 
 ```
 client_max_body_size 10G;
-keepalive_timeout 0;
 
 ```
