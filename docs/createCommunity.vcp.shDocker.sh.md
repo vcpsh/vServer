@@ -21,7 +21,7 @@ docker create --name community.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link slapd:slapd \
     --link mysql:mysql \
-    --link s.vcp.sh:shortner
+    --link s.vcp.sh:shortner \
     --expose 80 \
     -v /var/data/community_vcp_sh/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
