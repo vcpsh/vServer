@@ -20,7 +20,6 @@ docker create --name s.vcp.sh \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/s.vcp.sh/www:/app \
-    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
-webdevops/php-nginx:latest
+webdevops/php-apache:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
