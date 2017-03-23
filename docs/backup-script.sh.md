@@ -15,12 +15,17 @@ MONTHROTATE=monthrotate                 # use DD instead of YYMMDD
 
 RSYNCCONF=(--delete)
 #MOUNTPOINT="/media/daten"               # check local mountpoint
-#MAILREC="user@domain"
+MAILREC="internet@vcp.sh"
 
 SSHUSER="vcp-bu"
 #FROMSSH="fromssh-server"
 TOSSH="leo1318.dnshome.de"
 SSHPORT=8022
+
+
+#pre backup stuff
+docker exec mysql sh -c 'exec mysqldump --all-databases -uroot -p "$sql_root_password"' > /var/data/mysql/backup/all-databases.sql
+
 
 ### do not edit ###
 
