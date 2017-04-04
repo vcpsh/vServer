@@ -24,6 +24,8 @@ SSHPORT=8022
 
 
 #pre backup stuff
+source $(dirname $0)/config.cfg
+mkdir -p /var/data/mysql/backup
 docker exec mysql sh -c 'exec mysqldump --all-databases -uroot -p "$sql_root_password"' > /var/data/mysql/backup/all-databases.sql
 
 
