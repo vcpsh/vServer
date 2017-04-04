@@ -1,0 +1,23 @@
+# Creates open slides
+We use this image https://hub.docker.com/r/ppschweiz/openslides/
+
+```` bash
+#!/bin/bash
+source $(dirname $0)/config.cfg
+
+subdomains[0]="openslides"
+
+createDomainNames $subdomains
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P` #Get the Fullpath
+popd > /dev/null
+
+
+docker create --name openslides.vcp.sh \
+    -e "VIRTUAL_HOST=$myresult" \
+    -e "LETSENCRYPT_HOST=$myresult" \
+    -e "LETSENCRYPT_EMAIL=$adminmail" \
+    --expose 80 \
+ppschweiz/openslides
+#-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
+````
