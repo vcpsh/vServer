@@ -21,7 +21,7 @@ docker create --name openslides.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "RESETADMIN=true" \
     -v /var/data/openslides.vcp.sh/data:/data \
-    --expose 8000 \
+    --expose 80 \
 ppschweiz/openslides
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
