@@ -22,6 +22,6 @@ docker create --name openslides.vcp.sh \
     -e "RESETADMIN=true" \
     -v /var/data/openslides.vcp.sh/data:/data \
     --expose 8000 \
-ppschweiz/openslides
+python:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
