@@ -15,7 +15,7 @@ MONTHROTATE=monthrotate                 # use DD instead of YYMMDD
 
 RSYNCCONF=(--delete)
 #MOUNTPOINT="/media/daten"               # check local mountpoint
-MAILREC="internet@vcp.sh"
+#MAILREC="internet@vcp.sh"
 
 SSHUSER="vcp-bu"
 #FROMSSH="fromssh-server"
