@@ -19,6 +19,7 @@ docker create --name openslides.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
+    --link mysql:mysql \
     -v /var/data/openslides.vcp.sh/data:/data \
     --expose 80 \
 ppschweiz/openslides
