@@ -20,7 +20,8 @@ docker create --name openslides.vcp.sh \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -v /var/data/openslides.vcp.sh/data/:/data \
+    -v /var/data/openslides.vcp.sh/config/supervisord.conf:/supervisord.conf \
     --expose 8000 \
-ppschweiz/openslides
+emanuels/openslides
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
