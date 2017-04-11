@@ -37,7 +37,7 @@ DPKG="/usr/bin/dpkg"; AWK="/usr/bin/awk"; MAIL="/usr/bin/mail"
 CUT="/usr/bin/cut"; TR="/usr/bin/tr"; RSYNC="/usr/bin/rsync"
 LAST="last"; INC="--link-dest=$TARGET/$LAST"
 
-LOG=$0.log
+LOG=/home/internet/$0.log
 $DATE > $LOG
 
 if [ "${TARGET:${#TARGET}-1:1}" != "/" ]; then
