@@ -18,13 +18,14 @@ docker start vcp.sh
 docker start pfila.vcp.sh
 docker start piwik.vcp.sh
 docker start gruppenverwaltung
-docker start community.vcp.sh
 docker start diefalken.vcp.sh
 docker start website-redirects
 docker start lists.vcp.sh
 docker start freepolis.vcp.sh
 docker start averliekers.vcp.sh
 docker start s.vcp.sh
+docker start community.vcp.sh
+docker start openslides.vcp.sh
 
 docker start graphite
 docker start icinga.vcp.sh
