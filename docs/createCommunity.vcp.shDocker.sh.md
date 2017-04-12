@@ -21,6 +21,7 @@ docker create --name community.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link slapd:slapd \
     --link mysql:mysql \
+    --link smarthost:smarthost \
     --link s.vcp.sh:shortner \
     --expose 80 \
     -v /var/data/community_vcp_sh/www:/app \
