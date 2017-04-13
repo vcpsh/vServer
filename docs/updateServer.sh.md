@@ -15,6 +15,6 @@ apt-get update -y
 apt-get upgrade -y
 apt-get dist-upgrade -y
 /bin/bash /home/internet/vServer/scripts/updateDocker.sh
-shutdown -r now
+/sbin/shutdown -r now
 
 ```
