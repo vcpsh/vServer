@@ -6,9 +6,10 @@ It is not possible to link not running containers. Start the database and slapd 
 #!/bin/bash
 $(dirname $0)/updateMysqlDocker.sh
 $(dirname $0)/updateSlapdContainer.sh
-
+$(dirname $0)/updateSmarthost.sh
 docker start mysql
 docker start slapd
+docker start smarthost.vcp.sh
 
 $(dirname $0)/updateNginxReverseProxyContainer.sh
 
@@ -30,7 +31,7 @@ $(dirname $0)/updatePfila.vcp.shDocker.sh
 $(dirname $0)/updateVCP.shDocker.sh
 
 #$(dirname $0)/updateMailForwarder.sh
-$(dirname $0)/updateSmarthost.sh
+
 $(dirname $0)/updateWebsiteRedirect.sh
 
 $(dirname $0)/updateGraphiteDocker.sh
