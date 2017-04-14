@@ -44,8 +44,6 @@ popd > /dev/null
 
 docker create -p 80:80 -p 443:443 \
     --name nginx-proxy \
-    --net mynet \
-    --ip6 2a03:4000:13:47d:1::1 \
     -e ENABLE_IPV6=true \
     -v /var/data/certs:/etc/nginx/certs:ro \
     -v /etc/nginx/vhost.d \
