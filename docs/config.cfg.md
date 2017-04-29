@@ -47,6 +47,10 @@ DIRECTOR_PASSWORD=imheretomakeapassword
 IDO_PASSWORD=weneedbetterpasswords
 ICINGAWEB2_ADMIN_PASS=creativepassword
 icingaapipassword=heyYouWhoIYeahYouDoYouWantToBuyAPassword
+
+
+
+alderaanpwd="crazyshitpassword"
 #Input Array of Subdomains,
 #Output: String subdomain1.domain1, ... ,subdomain1.domainN,..., subdomainMdomainN
 function createDomainNames {
