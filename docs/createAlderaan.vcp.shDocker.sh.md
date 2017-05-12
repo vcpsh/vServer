@@ -7,7 +7,6 @@ source $(dirname $0)/config.cfg
 
 subdomains[0]="alderaan-dev"
 
-mkdir -p /var/data/alderaan/
 createDomainNames $subdomains
 pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P` #Get the Fullpath

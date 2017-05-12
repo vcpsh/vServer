@@ -15,7 +15,7 @@ $(dirname $0)/updateNginxReverseProxyContainer.sh
 
 $(dirname $0)/updatePiwik.vcp.shDocker.sh
 $(dirname $0)/updatePhpMyadmin.sh
-
+$(dirname $0)/updateOpenSlidesDocker.sh
 $(dirname $0)/updateDiefalken.vcp.shDocker.sh
 $(dirname $0)/updateFreepolisContainer.sh
 $(dirname $0)/updateAverliekers.vcp.shDocker.sh
