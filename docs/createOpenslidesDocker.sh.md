@@ -22,6 +22,6 @@ docker create --name openslides.vcp.sh \
     --link mysql:mysql \
     -v /var/data/openslides.vcp.sh/data:/data \
     --expose 80 \
-ppschweiz/openslides
+vcp-sh/openslides
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````

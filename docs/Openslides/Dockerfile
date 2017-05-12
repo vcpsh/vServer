@@ -2,7 +2,6 @@ FROM python:latest
 ENV RESETADMIN "/data/resetadmin"
 RUN pip install openslides
 RUN pip install html5lib
-RUN sed -i 's/^\(html5lib>=0.9\).*/\1/' /usr/local/lib/python3.5/site-packages/openslides-*/requires.txt
 RUN mkdir /data
 RUN mkdir /data/config
 RUN mkdir /data/share
