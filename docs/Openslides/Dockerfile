@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3.5
 ENV RESETADMIN "/data/resetadmin"
 RUN apt-get update
 RUN apt-get install -y build-essential
@@ -7,7 +7,7 @@ RUN apt-get install -y nodejs npm
 RUN npm install -g bower
 RUN pip install --upgrade setuptools pip
 RUN pip install html5lib
-RUN pip install openslides-2.1.tar.gz
+RUN pip install openslides
 RUN mkdir /data
 RUN mkdir /data/config
 RUN mkdir /data/share
