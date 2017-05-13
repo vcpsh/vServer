@@ -1,5 +1,9 @@
 FROM python:latest
 ENV RESETADMIN "/data/resetadmin"
+RUN apt-get update
+RUN apt-get install -y build-essential
+RUN apt-get install -y python3-dev
+RUN apt-get install -y nodejs npm
 RUN pip install --upgrade setuptools pip
 RUN pip install openslides
 RUN pip install html5lib
