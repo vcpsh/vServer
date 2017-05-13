@@ -7,7 +7,8 @@ RUN apt-get install -y nodejs npm
 RUN npm install -g bower
 RUN pip install --upgrade setuptools pip
 RUN pip install html5lib
-RUN pip install openslides
+RUN wget https://files.openslides.org/releases/2.1.1/openslides-2.1.1.tar.gz
+RUN pip install openslides-2.1.1.tar.gz
 RUN mkdir /data
 RUN mkdir /data/config
 RUN mkdir /data/share
