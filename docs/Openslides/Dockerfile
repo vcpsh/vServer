@@ -1,7 +1,11 @@
 FROM python:latest
 ENV RESETADMIN "/data/resetadmin"
+RUN python3 -m venv .virtualenv
+RUN source .virtualenv/bin/activate
+RUN pip install --upgrade setuptools pip
 RUN pip install openslides
 RUN pip install html5lib
+RUN source .virtualenv/bin/activate
 RUN mkdir /data
 RUN mkdir /data/config
 RUN mkdir /data/share
