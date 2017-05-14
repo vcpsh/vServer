@@ -2,9 +2,8 @@ FROM ubuntu:latest
 ENV RESETADMIN "/data/resetadmin"
 RUN apt-get update
 RUN apt-get install -y build-essential
-RUN apt-get install -y python
+RUN apt-get install -y python3
 RUN apt-get install -y python3-dev
-RUN apt-get install -y node
 RUN apt-get install -y nodejs npm
 RUN npm install -g bower
 RUN pip install --upgrade setuptools pip
