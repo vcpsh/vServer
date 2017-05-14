@@ -10,8 +10,7 @@ RUN npm install -g bower
 RUN python3 -m pip install --upgrade setuptools
 RUN python3 -m pip install html5lib
 RUN npm install -g @angular/cli
-RUN wget https://files.openslides.org/releases/2.1.1/openslides-2.1.1.tar.gz
-RUN python3 -m pip install openslides-2.1.1.tar.gz
+RUN python3 -m pip install openslides
 RUN mkdir /data
 RUN mkdir /data/config
 RUN mkdir /data/share
