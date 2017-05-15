@@ -6,13 +6,16 @@ RUN apt-get install -y python3
 RUN apt-get install -y python3-dev
 RUN apt-get install -y python3-pip
 RUN apt-get install -y curl
+RUN apt-get install -y apt-utils
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
 RUN apt-get install -y nodejs
 RUN npm install -g bower
-RUN python3 -m pip install --upgrade setuptools
+RUN python3 -m pip install --upgrade setuptools pip
 RUN python3 -m pip install html5lib
 RUN npm install -g @angular/cli
-RUN python3 -m pip install openslides
+RUN wget https://files.openslides.org/releases/2.1.1/openslides-2.1.1.tar.gz
+RUN python3 -m pip install openslides-2.1.1.tar.gz
+
 RUN mkdir /data
 RUN mkdir /data/config
 RUN mkdir /data/share
