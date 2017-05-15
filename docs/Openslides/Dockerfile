@@ -6,7 +6,7 @@ RUN apt-get install -y python3
 RUN apt-get install -y python3-dev
 RUN apt-get install -y python3-pip
 RUN apt-get install -y curl
-RUN apt-get install -y apt-utils
+RUN apt-get install -y apt-utils wget
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
 RUN apt-get install -y nodejs
 RUN npm install -g bower
