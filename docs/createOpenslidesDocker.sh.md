@@ -21,7 +21,7 @@ docker create --name openslides.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link mysql:mysql \
     -v /var/data/openslides.vcp.sh/data:/data \
-    --expose 80 \
+    -p 8888:80 \
 vcp-sh/openslides
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
