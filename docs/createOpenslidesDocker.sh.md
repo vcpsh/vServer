@@ -14,6 +14,7 @@ popd > /dev/null
 
 mkdir -p /var/data/openslides.vcp.sh/data/
 mkdir -p /var/data/openslides.vcp.sh/config/
+mkdir -p /var/data/openslides.vcp.sh/supervisord/
 
 docker create --name openslides.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
@@ -21,7 +22,8 @@ docker create --name openslides.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link mysql:mysql \
     -v /var/data/openslides.vcp.sh/data:/data \
-    -p 8888:80 \
+    -v /var/data/openslides.vcp.sh/supervisord/supervisord.conf:/supervisord.conf
+    --expose 8000 \
 vcp-sh/openslides
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
