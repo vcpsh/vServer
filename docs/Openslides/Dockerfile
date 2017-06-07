@@ -1,2 +1,2 @@
 FROM openslides/openslides
-ENTRYPOINT ["python manage.py runserver 0.0.0.0:80"]
+ENTRYPOINT python /app/manage.py runserver 0.0.0.0:80"
