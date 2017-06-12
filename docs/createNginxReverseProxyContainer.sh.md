@@ -51,7 +51,7 @@ docker create -p 80:80 -p 443:443 \
     -v $SCRIPTPATH/nginxproxy.conf:/etc/nginx/conf.d/nginxproxy.conf \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
     jwilder/nginx-proxy
-docker cp /var/data/nginx/config/proxy.conf nginx-proxy:/etc/nginx/proxy.conf
+
 docker create --name letsencrypt \
         -v /var/data/certs:/etc/nginx/certs:rw \
         --volumes-from nginx-proxy \
