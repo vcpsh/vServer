@@ -25,7 +25,7 @@ docker create --name openslides.vcp.sh \
     --expose 8000 \
 vcp-sh/openslides
 
-docker cp /var/data/openslides.vcp.sh/ /app/openslides/static/img/logo-projector.png
+docker cp /var/data/openslides.vcp.sh/ openslides.vcp.sh/app/openslides/static/img/logo-projector.png
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
 docker cp /var/data/nginx/config/proxy.conf nginx-proxy:/etc/nginx/proxy.conf
