@@ -5,6 +5,5 @@ RUN chmod -R 777 /app/personal_data/var
 USER 0
 RUN mkdir -p /app/openslides/static/img
 RUN chmod -R 777 /app/
-
 VOLUME /data
 ENTRYPOINT python /app/manage.py start

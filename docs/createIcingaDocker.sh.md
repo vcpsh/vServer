@@ -35,6 +35,7 @@ createDomainNames $subdomains
 docker create \
  --expose 80 \
  --expose 443 \
+ --expose 5665 \
  --name icinga.vcp.sh \
  -e "VIRTUAL_HOST=$myresult" \
  -e "LETSENCRYPT_HOST=$myresult" \

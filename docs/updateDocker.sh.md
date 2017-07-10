@@ -4,6 +4,8 @@ Call update script and start all container.
 It is not possible to link not running containers. Start the database and slapd container first.
 ````bash
 #!/bin/bash
+numberOfContainer=24
+
 $(dirname $0)/updateMysqlDocker.sh
 $(dirname $0)/updateSlapdContainer.sh
 $(dirname $0)/updateSmarthost.sh
@@ -39,4 +41,13 @@ docker start graphite
 $(dirname $0)/updateIcingaDocker.sh
 
 $(dirname $0)/start.sh
+function countContainers() {
+        docker ps -q $1 | wc -l
+}
+
+runningContainer=$(countContainers);
+if [ $numberOfContainer -eq $runningContainer ]
+then
+ docker system prune -af
+fi
 ````
