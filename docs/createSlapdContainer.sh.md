@@ -10,6 +10,7 @@ To avoid weird permission issues the owner of /var/data/ldap needs to be the gro
 source $(dirname $0)/config.cfg
 
 mkdir -p /var/data/ldap/data
+mkdir -p /var/data/ldap/backup
 mkdir -p /var/data/ldap/config
 
 # weird permission issue

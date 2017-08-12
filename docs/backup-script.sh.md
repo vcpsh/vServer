@@ -27,7 +27,7 @@ SSHPORT=8022
 source $(dirname $0)/config.cfg
 mkdir -p /var/data/mysql/backup
 docker exec mysql sh -c 'exec mysqldump --defaults-extra-file="/etc/mysql/conf.d/my.cnf" --all-databases --user=root ' > /var/data/mysql/backup/all-databases.sql
-
+docker exec slapd sh -c 'exec /usr/sbin/slapcat  -v' >  /var/data/ldap/backup/ldap-backup.ldif
 
 ### do not edit ###
 
