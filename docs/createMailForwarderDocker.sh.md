@@ -5,8 +5,14 @@ We use this image https://github.com/zixia/docker-simple-mail-forwarder
 #!/bin/bash
 source $(dirname $0)/config.cfg
 SMF_RELAYHOST='smarthost'
-docker create --name "mail-forwarder" -e SMF_RELAYHOST=$SMF_RELAYHOST -e SMF_CONFIG="$SMF_CONFIG" -p 188.68.37.206:25:25 -p 2a03:4000:13:47d::1:25:25--link smarthost:smarthost zixia/simple-mail-forwarder
-
+docker create --name "mail-forwarder" \
+    -e SMF_RELAYHOST=$SMF_RELAYHOST \
+    -e SMF_CONFIG="$SMF_CONFIG" \
+    -p 25:25 \
+    --link smarthost:smarthost \
+    zixia/simple-mail-forwarder
+    #-p 188.68.37.206:25:25 \
+    #-p 2a03:4000:13:47d::1:25:25 \
 ````
 
 #main.cf
