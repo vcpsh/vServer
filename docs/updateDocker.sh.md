@@ -37,6 +37,8 @@ $(dirname $0)/updateUrlShortener.sh
 docker start s.vcp.sh
 $(dirname $0)/updateGruppenverwaltungContainer.sh
 docker start gruppenverwaltung
+$(dirname $0)/updateLists.vcp.sh.sh
+docker start lists.vcp.sh
 
 $(dirname $0)/updateCommunity.vcp.shDocker.sh
 docker start community.vcp.sh
