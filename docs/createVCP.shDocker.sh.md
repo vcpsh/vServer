@@ -12,8 +12,8 @@ popd > /dev/null
 mkdir -p /var/data/vcp.sh/www/public
 
 docker create --name vcp.sh \
-    -e "VIRTUAL_HOST=${domains[0]}" \
-    -e "LETSENCRYPT_HOST=${domains[0]}" \
+    -e "VIRTUAL_HOST=${domains[0]} , ${domains[1]}" \
+    -e "LETSENCRYPT_HOST=${domains[0]} , ${domains[1]}" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     --link mysql:mysql \
