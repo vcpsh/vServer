@@ -32,6 +32,7 @@ events {
 http {
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
+    server_names_hash_max_size: 2048;
 
     log_format  main  '\$remote_addr - \$remote_user [\$time_local] \"\$request\" '
                       '\$status \$body_bytes_sent \"\$http_referer\" '
@@ -63,8 +64,8 @@ for WEBSITE in "${WEBSITES[@]}"; do
 done
 domainlistfrom="${domainlistfrom%?}"
 config="$config }"
-#echo $config
-#echo $domainlistfrom
+echo $config
+echo $domainlistfrom
 
 mkdir -p /var/data/websiteRedirects
 echo "$config" > /var/data/websiteRedirects/nginx.conf
