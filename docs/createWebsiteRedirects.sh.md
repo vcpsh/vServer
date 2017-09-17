@@ -66,12 +66,12 @@ function createConfig {
   config="$config }"
 }
 
-createConfig REDIRECTDOMAINS
+createConfig $REDIRECTDOMAINS
 
 echo $config
 echo $domainlistfrom
 
-createConfig REDIRECTDOMAINSTWO
+createConfig $REDIRECTDOMAINSTWO
 
 echo $config
 echo $domainlistfrom
