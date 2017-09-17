@@ -71,23 +71,32 @@ createConfig $REDIRECTDOMAINS
 echo $config
 echo $domainlistfrom
 
-createConfig $REDIRECTDOMAINSTWO
 
+
+mkdir -p /var/data/websiteRedirects
+echo "$config" > /var/data/websiteRedirects/nginx.conf
+
+docker create \
+--name website-redirects \
+-e HTTPS_METHOD=nohttps \
+-e "VIRTUAL_HOST=$domainlistfrom" \
+-e "LETSENCRYPT_HOST=$domainlistfrom" \
+-e "LETSENCRYPT_EMAIL=$adminmail" \
+--expose 80 \
+-v /var/data/websiteRedirects/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
+
+mkdir -p /var/data/websiteRedirectsTwo
+createConfig $REDIRECTDOMAINSTWO
 echo $config
 echo $domainlistfrom
-
-# mkdir -p /var/data/websiteRedirects
-# echo "$config" > /var/data/websiteRedirects/nginx.conf
-#
-# docker create \
-# --name website-redirects \
-# -e HTTPS_METHOD=nohttps \
-# -e "VIRTUAL_HOST=$domainlistfrom" \
-# -e "LETSENCRYPT_HOST=$domainlistfrom" \
-# -e "LETSENCRYPT_EMAIL=$adminmail" \
-# --expose 80 \
-# -v /var/data/websiteRedirects/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
-
-
+echo "$config" > /var/data/websiteRedirectsTwo/nginx.conf
+docker create \
+--name website-redirects-two \
+-e HTTPS_METHOD=nohttps \
+-e "VIRTUAL_HOST=$domainlistfrom" \
+-e "LETSENCRYPT_HOST=$domainlistfrom" \
+-e "LETSENCRYPT_EMAIL=$adminmail" \
+--expose 80 \
+-v /var/data/websiteRedirectsTwo/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
 
 ```
