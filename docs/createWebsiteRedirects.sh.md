@@ -71,6 +71,11 @@ createConfig REDIRECTDOMAINS
 echo $config
 echo $domainlistfrom
 
+createConfig REDIRECTDOMAINSTWO
+
+echo $config
+echo $domainlistfrom
+
 # mkdir -p /var/data/websiteRedirects
 # echo "$config" > /var/data/websiteRedirects/nginx.conf
 #
