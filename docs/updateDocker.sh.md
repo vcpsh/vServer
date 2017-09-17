@@ -4,7 +4,7 @@ Call update script and start all container.
 It is not possible to link not running containers. Start the database and slapd container first.
 ```bash
 #!/bin/bash
-numberOfContainer=24
+numberOfContainer=25
 
 #stop all running containers
 docker stop $(docker ps -a -q)
