@@ -20,6 +20,7 @@ docker create --name alderaan.vcp.sh \
     -e "WORDPRESS_DB_USER=alderaan.vcp.sh" \
     -e "WORDPRESS_DB_PASSWORD=$alderaanpwd" \
     -e "WORDPRESS_DB_NAME=alderaan.vcp.sh" \
+    -e HTTPS_METHOD=nohttps \
     -v /var/data/alderaan/uploads:/var/www/html/wp-content/uploads \
     --link mysql:mysql \
     --expose 80 \
