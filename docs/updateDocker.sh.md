@@ -58,8 +58,8 @@ docker start alderaan.vcp.sh
 docker start mail-forwarder
 
 $(dirname $0)/updateWebsiteRedirect.sh
-#docker start website-redirects
-
+docker start website-redirects
+docker start website-redirects-two
 $(dirname $0)/updateGraphiteDocker.sh
 docker start graphite
 $(dirname $0)/updateIcingaDocker.sh

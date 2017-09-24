@@ -82,7 +82,7 @@ docker create \
 -e "VIRTUAL_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
---expose 8080 \
+--expose 80 \
 -v /var/data/websiteRedirects/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
 
 mkdir -p /var/data/websiteRedirectsTwo
@@ -96,7 +96,7 @@ docker create \
 -e "VIRTUAL_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
---expose 8080 \
+--expose 80 \
 -v /var/data/websiteRedirectsTwo/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
 
 ```
