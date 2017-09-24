@@ -78,7 +78,6 @@ echo "$config" > /var/data/websiteRedirects/nginx.conf
 
 docker create \
 --name website-redirects \
--e HTTPS_METHOD=nohttps \
 -e "VIRTUAL_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
@@ -92,7 +91,6 @@ echo $domainlistfrom
 echo "$config" > /var/data/websiteRedirectsTwo/nginx.conf
 docker create \
 --name website-redirects-two \
--e HTTPS_METHOD=nohttps \
 -e "VIRTUAL_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
