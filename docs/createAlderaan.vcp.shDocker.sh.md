@@ -5,7 +5,7 @@ We use this image https://hub.docker.com/_/wordpress/
 #!/bin/bash
 source $(dirname $0)/config.cfg
 mkdir -p /var/data/uploads
-subdomains[0]="alderaan-dev"
+subdomains[0]="alderaan"
 
 createDomainNames $subdomains
 pushd `dirname $0` > /dev/null
