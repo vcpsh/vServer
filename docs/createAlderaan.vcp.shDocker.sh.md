@@ -4,7 +4,7 @@ We use this image https://hub.docker.com/_/wordpress/
 ```` bash
 #!/bin/bash
 source $(dirname $0)/config.cfg
-mkdir -p /var/data/uploads
+mkdir -p /var/data/alderaan/www
 subdomains[0]="alderaan"
 
 createDomainNames $subdomains
@@ -14,16 +14,13 @@ popd > /dev/null
 
 docker create --name alderaan.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
+    -e "WEB_DOCUMENT_ROOT=/app/public" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
-    -e "WORDPRESS_DB_HOST=mysql" \
-    -e "WORDPRESS_DB_USER=alderaan.vcp.sh" \
-    -e "WORDPRESS_DB_PASSWORD=$alderaanpwd" \
-    -e "WORDPRESS_DB_NAME=alderaan.vcp.sh" \
-    -e HTTPS_METHOD=nohttps \
-    -v /var/data/alderaan/uploads:/var/www/html/wp-content/uploads \
     --link mysql:mysql \
     --expose 80 \
-wordpress
+    -v /var/data/alderaan/www:/app \
+    -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
+webdevops/php-nginx:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
