@@ -14,7 +14,7 @@ popd > /dev/null
 
 docker create --name alderaan.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
-    -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "WEB_DOCUMENT_ROOT=/app" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     --link mysql:mysql \
