@@ -11,10 +11,11 @@ docker stop $(docker ps -a -q)
 
 $(dirname $0)/updateMysqlDocker.sh
 docker start mysql
+
 $(dirname $0)/updateSlapdContainer.sh
 docker start slapd
-#temporary deactivated smarthost update to prevent mail-forwarder from breaking
-#$(dirname $0)/updateSmarthost.sh
+
+$(dirname $0)/updateSmarthost.sh
 docker start smarthost
 
 $(dirname $0)/updateNginxReverseProxyContainer.sh
@@ -54,7 +55,7 @@ $(dirname $0)/updateVCP.shDocker.sh
 docker start vcp.sh
 $(dirname $0)/updateAlderaan.vcp.shDocker.sh
 docker start alderaan.vcp.sh
-#$(dirname $0)/updateMailForwarder.sh
+$(dirname $0)/updateMailForwarder.sh
 docker start mail-forwarder
 
 $(dirname $0)/updateWebsiteRedirect.sh
