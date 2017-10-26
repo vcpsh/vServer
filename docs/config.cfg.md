@@ -48,6 +48,9 @@ IDO_PASSWORD=weneedbetterpasswords
 ICINGAWEB2_ADMIN_PASS=creativepassword
 icingaapipassword=heyYouWhoIYeahYouDoYouWantToBuyAPassword
 
+borg_passphrase="ifYouWannBeMyLoverGottaGetWithMyFriends"
+
+
 
 
 alderaanpwd="crazyshitpassword"

@@ -1,10 +1,13 @@
+
+
+``` bash
 #!/bin/bash
 
 # Skriptvorlage BorgBackup
 # https://wiki.ubuntuusers.de/BorgBackup/
 # https://borgbackup.readthedocs.io/en/stable/
-
-export BORG_PASSPHRASE="B9xor49K3rHg49vVqMeD" 
+source $(dirname $0)/config.cfg
+export BORG_PASSPHRASE=$borg_passphrase
 # Hier Pfad zum Sicherungsmedium angeben.
 # z.B. zielpfad="/media/peter/HD_Backup"
 zielpfad="ssh://vcpbackup@leo1318.dnshome.de:8122/home/vcpbackup/backup"
@@ -30,7 +33,7 @@ kompression="lzma"
 rootuser="nein"
 
 # Hier angeben nach welchem Schema alte Archive gelöscht werden sollen.
-# Die Vorgabe behält alle Sicherungen des aktuellen Tages. Zusätzlich das aktuellste Archiv der 
+# Die Vorgabe behält alle Sicherungen des aktuellen Tages. Zusätzlich das aktuellste Archiv der
 # letzten 7 Sicherungstage, der letzten 4 Wochen sowie der letzten 12 Monate.
 pruning="--keep-within=1d --keep-daily=7 --keep-weekly=4 --keep-monthly=12"
 
@@ -46,7 +49,7 @@ fi
 
 # Init borg-repo if absent
 if [ ! -d $repopfad ]; then
-  borg init --encryption=$verschluesselung $repopfad 
+  borg init --encryption=$verschluesselung $repopfad
   echo "Borg-Repository erzeugt unter $repopfad"
 fi
 
@@ -61,3 +64,5 @@ echo "Ende der Sicherung $(date). Dauer: $SECONDS Sekunden"
 
 # prune archives
 borg prune -v --list $repopfad --prefix '{hostname}-' $pruning
+
+```
