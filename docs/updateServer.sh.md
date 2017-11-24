@@ -11,6 +11,7 @@ The Server has a entry in crontab for the docker start script
 ``` bash
 #!/bin/bash
 /bin/bash /home/internet/vServer/scripts/backup-script.sh
+/bin/bash /home/internet/vServer/scripts/borg-backup.sh
 apt-get update -y
 apt-get upgrade -y
 apt-get dist-upgrade -y

@@ -19,6 +19,7 @@ docker create --name community.vcp.sh \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
+    -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --link slapd:slapd \
     --link mysql:mysql \
     --link smarthost:smarthost \

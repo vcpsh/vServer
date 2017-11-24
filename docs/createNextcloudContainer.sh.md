@@ -42,6 +42,7 @@ docker create --name nextcloud \
        -e "VIRTUAL_HOST=$myresult" \
        -e "LETSENCRYPT_HOST=$myresult" \
        -e "LETSENCRYPT_EMAIL=$adminmail" \
+       -e "HTTPS_METHOD=$HTTPS_METHOD" \
        -e "port=8080" \
        --expose 8888 \
        wonderfall/nextcloud:$nextcloud_tag

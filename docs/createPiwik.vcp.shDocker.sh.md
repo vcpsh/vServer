@@ -17,6 +17,7 @@ docker create \
  -e "LETSENCRYPT_EMAIL=$adminmail" \
  -e "PIWIK_MYSQL_USER=piwik" \
  -e "PIWIK_MYSQL_PASSWORD=$PIWIK_MYSQL_PASSWORD" \
+ -e "HTTPS_METHOD=$HTTPS_METHOD" \
  marvambass/piwik
 
 

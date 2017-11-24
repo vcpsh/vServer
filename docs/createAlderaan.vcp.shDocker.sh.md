@@ -17,6 +17,7 @@ docker create --name alderaan.vcp.sh \
     -e "WEB_DOCUMENT_ROOT=/app" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
+    -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/alderaan/www:/app \

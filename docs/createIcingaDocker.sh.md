@@ -40,6 +40,7 @@ docker create \
  -e "VIRTUAL_HOST=$myresult" \
  -e "LETSENCRYPT_HOST=$myresult" \
  -e "LETSENCRYPT_EMAIL=$adminmail" \
+ -e "HTTPS_METHOD=$HTTPS_METHOD" \
  --link graphite:graphite \
   -e ICINGA2_FEATURE_GRAPHITE=true \
   -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite \

@@ -19,6 +19,7 @@ docker create --name diefalken.vcp.sh \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
+    -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --link mysql:mysql \
     --link smarthost:smarthost \
     --expose 80 \

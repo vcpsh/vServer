@@ -16,6 +16,7 @@ docker create --name vcp.sh \
     -e "LETSENCRYPT_HOST=${domains[0]} , ${domains[1]}" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
+    -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --link mysql:mysql \
     --link slapd:ldap \
     --link nextcloud:nextcloud \

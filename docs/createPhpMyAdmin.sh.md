@@ -8,6 +8,7 @@ docker create --name sqladmin\
  --link mysql:db\
   -e "VIRTUAL_HOST=sqladmin.${domains[0]}"\
   -e LETSENCRYPT_HOST="sqladmin.${domains[0]}"\
+  -e "HTTPS_METHOD=$HTTPS_METHOD" \
   --expose 80 \
   -e LETSENCRYPT_EMAIL=$adminmail phpmyadmin/phpmyadmin
 

@@ -81,6 +81,7 @@ docker create \
 -e "VIRTUAL_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
+-e "HTTPS_METHOD=$HTTPS_METHOD" \
 --expose 80 \
 -v /var/data/websiteRedirects/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
 
@@ -94,6 +95,7 @@ docker create \
 -e "VIRTUAL_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_HOST=$domainlistfrom" \
 -e "LETSENCRYPT_EMAIL=$adminmail" \
+-e "HTTPS_METHOD=$HTTPS_METHOD" \
 --expose 80 \
 -v /var/data/websiteRedirectsTwo/nginx.conf:/etc/nginx/nginx.conf:ro nginx:latest
 
