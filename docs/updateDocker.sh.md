@@ -30,8 +30,9 @@ $(dirname $0)/updateOpenSlidesDocker.sh
 docker start openslides.vcp.sh
 $(dirname $0)/updateDiefalken.vcp.shDocker.sh
 docker start diefalken.vcp.sh
-$(dirname $0)/updateFreepolisContainer.sh
-docker start freepolis.vcp.sh
+# archived
+# $(dirname $0)/updateFreepolisContainer.sh
+# docker start freepolis.vcp.sh
 $(dirname $0)/updateAverliekers.vcp.shDocker.sh
 docker start averliekers.vcp.sh
 $(dirname $0)/updateUrlShortener.sh
