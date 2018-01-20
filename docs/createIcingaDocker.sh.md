@@ -57,6 +57,7 @@ docker create \
   -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
   -v /var/data/icinga.vcp.sh/log/:/var/log/ \
   -v /var/data/icinga.vcp.sh/icinga2:/etc/icinga2 \
+  -v /var/data/icinga.vcü.sh/icingaweb2:/etc/icingaweb2 \
   jordan/icinga2:latest
 
 ```
