@@ -12,6 +12,7 @@ mkdir -p /var/data/icinga.vcp.sh/sql
 mkdir -p /var/data/icinga.vcp.sh/conf/icinga/
 mkdir -p /var/data/icinga.vcp.sh/log
 mkdir -p /var/data/icinga.vcp.sh/log/mysql
+mkdir -p /var/data/icinga.vcü.sh/icingaweb2
 #mailserver definition
 echo "
 root=relay@vcp.sh
