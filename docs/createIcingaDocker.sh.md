@@ -12,7 +12,7 @@ mkdir -p /var/data/icinga.vcp.sh/sql
 mkdir -p /var/data/icinga.vcp.sh/conf/icinga/
 mkdir -p /var/data/icinga.vcp.sh/log
 mkdir -p /var/data/icinga.vcp.sh/log/mysql
-mkdir -p /var/data/icinga.vcü.sh/icingaweb2
+mkdir -p /var/data/icinga.vcp.sh/icingaweb2
 #mailserver definition
 echo "
 root=relay@vcp.sh
@@ -58,7 +58,7 @@ docker create \
   -v /var/data/icinga.vcp.sh/conf/revaliases:/etc/ssmtp/revaliases:ro \
   -v /var/data/icinga.vcp.sh/log/:/var/log/ \
   -v /var/data/icinga.vcp.sh/icinga2:/etc/icinga2 \
-  -v /var/data/icinga.vcü.sh/icingaweb2:/etc/icingaweb2 \
+  -v /var/data/icinga.vcp.sh/icingaweb2:/etc/icingaweb2 \
   jordan/icinga2:latest
 
 ```
