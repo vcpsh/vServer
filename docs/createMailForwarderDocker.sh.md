@@ -19,4 +19,4 @@ docker create --name "mail-forwarder" \
 #main.cf
 sender_canonical_maps = regexp:/etc/postfix/sender_canonical_maps
 #sender_canonical_maps
-/.+/  relay@vcp.sh
+/.+/  catchall@vcp.sh
