@@ -1,6 +1,4 @@
 # Creates open slides
-We use this image https://hub.docker.com/r/ppschweiz/openslides/
-
 ```` bash
 #!/bin/bash
 source $(dirname $0)/config.cfg

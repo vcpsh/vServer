@@ -9,7 +9,7 @@ docker create \
    -e HOSTNAME="smarthost.vcp.sh" \
    -e EXIM_SMARTHOST=mxf960.netcup.net:25 \
    -e EXIM_PASSWORD=mxf960.netcup.net:$smarthost_username:$smarthost_password \
-   -e EXIM_ALLOWED_SENDERS="172.17.0.0/24 172.20.100.0/24 172.20.101.12 172.20.101.13" \
+   -e EXIM_ALLOWED_SENDERS=172.17.0.0/24:127.0.0.1 \
     imixs/exim4
 
 
