@@ -57,6 +57,8 @@ $(dirname $0)/updateVCP.shDocker.sh # 1 container
 docker start vcp.sh
 $(dirname $0)/updateAlderaan.vcp.shDocker.sh # 1 container
 docker start alderaan.vcp.sh
+$(dirname $0)/updateSteveBiko.vcp.shDocker.sh # 1 container
+docker start stevebiko.vcp.sh
 $(dirname $0)/updateMailForwarder.sh # 1 container
 docker start mail-forwarder
 
