@@ -19,7 +19,7 @@ docker create --name stevebiko.vcp.sh \
     -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --link mysql:mysql \
     --expose 80 \
-    -v /var/data/alderaan/www:/app \
+    -v /var/data/stevebiko/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
 webdevops/php-nginx:latest
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
