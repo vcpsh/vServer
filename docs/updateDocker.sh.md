@@ -2,10 +2,12 @@
 
 Call update script and start all container.
 It is not possible to link not running containers. Start the database and slapd container first.
+Für jeden Container sollte sollte folgender String verwendet werden  # 1 contain'er (ohne'). Falls eine update Skript zwei container enthält den String einfach doppelt hinter einander.
+So kann man mit einer einfachen suche schnell heraus finden wie viele Container gerade aktiv sind.
 
 ```bash
 #!/bin/bash
-numberOfContainer=23
+numberOfContainer=25
 
 #stop all running containers
 docker stop $(docker ps -a -q)
@@ -19,7 +21,7 @@ docker start slapd
 $(dirname $0)/updateSmarthost.sh # 1 container
 docker start smarthost
 
-$(dirname $0)/updateNginxReverseProxyContainer.sh # 2 container
+$(dirname $0)/updateNginxReverseProxyContainer.sh # 1 container # 1 container
 docker start nginx-proxy
 docker start letsencrypt
 
@@ -62,7 +64,7 @@ docker start stevebiko.vcp.sh
 $(dirname $0)/updateMailForwarder.sh # 1 container
 docker start mail-forwarder
 
-$(dirname $0)/updateWebsiteRedirect.sh # 2 container
+$(dirname $0)/updateWebsiteRedirect.sh # 1 container # 1 container
 docker start website-redirects
 docker start website-redirects-two
 $(dirname $0)/updateGraphiteDocker.sh # 1 container
