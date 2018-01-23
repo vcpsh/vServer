@@ -17,10 +17,11 @@ docker create --name stevebiko.vcp.sh \
     -e "LETSENCRYPT_HOST=$myresult" \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "HTTPS_METHOD=$HTTPS_METHOD" \
+    -e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
     --link mysql:mysql \
     --expose 80 \
     -v /var/data/stevebiko/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
 webdevops/php-nginx:latest
-#-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
+# \
 ````
