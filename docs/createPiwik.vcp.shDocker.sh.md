@@ -1,7 +1,8 @@
 # Creates piwik docker
+
 We use this image https://hub.docker.com/_/piwik/
 
-```` bash
+```bash
 #!/bin/bash
 source $(dirname $0)/config.cfg
 subdomains[0]="piwik"
@@ -18,16 +19,15 @@ docker create \
  -e "PIWIK_MYSQL_USER=piwik" \
  -e "PIWIK_MYSQL_PASSWORD=$PIWIK_MYSQL_PASSWORD" \
  -e "HTTPS_METHOD=$HTTPS_METHOD" \
- marvambass/piwik
+ marvambass/piwik:latest
+```
 
-
-````
 old code
 
 docker create --name piwik.vcp.sh \
-    --link mysql:db \
-    -e "VIRTUAL_HOST=$myresult" \
-    --expose 9000 \
-    -e "LETSENCRYPT_HOST=$myresult" \
-    -e "LETSENCRYPT_EMAIL=$adminmail" \
-    piwik
+ --link mysql:db \
+ -e "VIRTUAL_HOST=$myresult" \
+ --expose 9000 \
+ -e "LETSENCRYPT_HOST=$myresult" \
+ -e "LETSENCRYPT_EMAIL=$adminmail" \
+ piwik
