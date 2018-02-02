@@ -20,7 +20,7 @@ docker create \
  -e "PIWIK_MYSQL_USER=piwik" \
  -e "PIWIK_MYSQL_PASSWORD=$PIWIK_MYSQL_PASSWORD" \
  -e "HTTPS_METHOD=$HTTPS_METHOD" \
- marvambass/piwik:latest
+ marvambass/piwik:3.3.0
 ```
 
 old code
