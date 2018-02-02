@@ -7,6 +7,7 @@ We use this image https://hub.docker.com/_/piwik/
 source $(dirname $0)/config.cfg
 subdomains[0]="piwik"
 subdomains[1]="analytics"
+subdomains[2]="matomo"
 createDomainNames $subdomains
 
 docker create \
