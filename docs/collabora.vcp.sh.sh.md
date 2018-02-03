@@ -12,7 +12,7 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P` #Get the Fullpath
 popd > /dev/null
 
-docker create --name lists.vcp.sh \
+docker create --name collabora.vcp.sh \
     -e "VIRTUAL_HOST=$myresult" \
     -e 'domain=cloud\\.vcp\\.sh' \
     -e "LETSENCRYPT_HOST=$myresult" \
