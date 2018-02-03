@@ -42,11 +42,13 @@ pushd `dirname $0` > /dev/null
 SCRIPTPATH=`pwd -P` #Get the Fullpath
 popd > /dev/null
 
+mkdir -p /var/data/nginx/vhost.d
+
 docker create -p 80:80 -p 443:443 \
     --name nginx-proxy \
     -e ENABLE_IPV6=true \
     -v /var/data/certs:/etc/nginx/certs:ro \
-    -v /etc/nginx/vhost.d \
+    -v /var/data/nginx/vhost.d:/etc/nginx/vhost.d:ro \
     -v /usr/share/nginx/html \
     -v $SCRIPTPATH/nginxproxy.conf:/etc/nginx/conf.d/nginxproxy.conf \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
