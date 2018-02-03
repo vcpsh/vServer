@@ -12,10 +12,9 @@ mkdir -p /var/data/nextcloud/config
 mkdir -p /var/data/nextcloud/apps
 
 subdomains[0]="cloud"
-subdomains[1]="owncloud"
-subdomains[2]="nextcloud"
-subdomains[3]="pfadicloud"
-subdomains[4]="c"
+subdomains[1]="nextcloud"
+subdomains[2]="pfadicloud"
+subdomains[3]="c"
 createDomainNames $subdomains
 
 docker create --name nextcloud \
