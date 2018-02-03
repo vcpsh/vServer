@@ -22,7 +22,6 @@ docker create --name nextcloud \
        --link mysql:db_nextcloud \
        --link slapd:slapd \
        --link nextcloud-redis:nextcloud-redis \
-       --link collabora.vcp.sh:collabora \
        -v /var/data/nextcloud/data:/data \
        -v /var/data/nextcloud/config:/config \
        -v /var/data/nextcloud/apps:/apps2 \
