@@ -2,7 +2,8 @@
 
 We use this image https://hub.docker.com/r/webdevops/php-nginx/
 LDAP Extension is enabled. This is important for the login with the ldap Server
-```` bash
+
+```bash
 #!/bin/bash
 source $(dirname $0)/config.cfg
 pushd `dirname $0` > /dev/null
@@ -24,7 +25,6 @@ docker create --name vcp.sh \
     --expose 80 \
     -v /var/data/vcp.sh/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
-webdevops/php-nginx:ubuntu-14.04
+webdevops/php-nginx:ubuntu-16.04
 #- \
-
-````
+```
