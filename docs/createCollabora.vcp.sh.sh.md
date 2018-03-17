@@ -19,7 +19,7 @@ docker create --name collabora.vcp.sh \
     -e "LETSENCRYPT_EMAIL=$adminmail" \
     -e "HTTPS_METHOD=$HTTPS_METHOD" \
     -e 'domain=cloud\\.vcp\\.sh' \
-    ---expose 9980 \
+    --expose 9980 \
     --cap-add MKNOD \
     collabora/code
 
