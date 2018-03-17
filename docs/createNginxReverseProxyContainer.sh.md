@@ -52,6 +52,7 @@ docker create -p 80:80 -p 443:443 \
     -v /usr/share/nginx/html \
     -v $SCRIPTPATH/nginxproxy.conf:/etc/nginx/conf.d/nginxproxy.conf \
     -v /var/run/docker.sock:/tmp/docker.sock:ro \
+    --label com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy \
     --restart unless-stopped \
     jwilder/nginx-proxy
 
