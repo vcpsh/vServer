@@ -59,6 +59,7 @@ docker create --name letsencrypt \
         -v /var/data/certs:/etc/nginx/certs:rw \
         --volumes-from nginx-proxy \
         -v /var/run/docker.sock:/var/run/docker.sock:ro \
+        -v /var/data/nginx/vhost.d:/etc/nginx/vhost.d:rw \
         -e DEBUG=$debug \
         jrcs/letsencrypt-nginx-proxy-companion
 ```
