@@ -1,3 +1,4 @@
+````
 server {
     listen       80;
     server_name  collabora.vcp.sh;
@@ -35,3 +36,4 @@ server {
        proxy_read_timeout 36000s;
    }
 }
+````
