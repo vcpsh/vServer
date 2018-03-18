@@ -24,7 +24,7 @@ docker create --name collabora.vcp.sh \
         -e "LETSENCRYPT_HOST=$myresult" \
         -e "LETSENCRYPT_EMAIL=$adminmail" \
         -e "HTTPS_METHOD=$HTTPS_METHOD" \
-        -v $(dirname $0)/collaboraNginx.conf:/etc/nginx/nginx.conf:ro \
+        -v /home/internet/vServer/scripts/collaboraNginx.conf:/etc/nginx/nginx.conf:ro \
         --link collabora.vcp.sh:collabora \
         --expose 80 \
         nginx
