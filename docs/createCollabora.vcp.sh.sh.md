@@ -14,14 +14,20 @@ SCRIPTPATH=`pwd -P` #Get the Fullpath
 popd > /dev/null
 
 docker create --name collabora.vcp.sh \
-    -e "VIRTUAL_HOST=$myresult" \
-    -e "LETSENCRYPT_HOST=$myresult" \
-    -e "LETSENCRYPT_EMAIL=$adminmail" \
-    -e "HTTPS_METHOD=$HTTPS_METHOD" \
     -e 'domain=cloud\\.vcp\\.sh' \
     --expose 9980 \
     --cap-add MKNOD \
     collabora/code
+
+  docker create --name collabora-nginx.vcp.sh \
+        -e "VIRTUAL_HOST=$myresult" \
+        -e "LETSENCRYPT_HOST=$myresult" \
+        -e "LETSENCRYPT_EMAIL=$adminmail" \
+        -e "HTTPS_METHOD=$HTTPS_METHOD" \
+        -v $scriptath/collaboraNginx.conf:/etc/nginx/nginx.conf:ro \
+        --link collabora.vcp.sh:collabora \
+        --expose 80 \
+        nginx
 
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
