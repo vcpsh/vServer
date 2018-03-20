@@ -23,6 +23,6 @@ docker create --name slapd \
 -v /var/data/ldap/config/:/etc/ldap \
 -p 389:389 \
 --network=dotnet \
---network=slapd \
+--network=default \
 vcpsh/slapd:latest
 ```
