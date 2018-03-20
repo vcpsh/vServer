@@ -2,12 +2,15 @@
 
 Call update script and start all container.
 It is not possible to link not running containers. Start the database and slapd container first.
-Für jeden Container sollte sollte folgender String verwendet werden  # 1 contain'er (ohne'). Falls eine update Skript zwei container enthält den String einfach doppelt hinter einander.
+Für jeden Container sollte sollte folgender String verwendet werden # 1 contain'er (ohne'). Falls eine update Skript zwei container enthält den String einfach doppelt hinter einander.
 So kann man mit einer einfachen suche schnell heraus finden wie viele Container gerade aktiv sind.
 
 ```bash
 #!/bin/bash
-numberOfContainer=25
+numberOfContainer=26
+
+#networks
+docker network create dotnet
 
 #stop all running containers
 docker stop $(docker ps -a -q)
@@ -17,6 +20,9 @@ docker start mysql
 
 $(dirname $0)/updateSlapdContainer.sh # 1 container
 docker start slapd
+
+# SingleSignOnServer
+docker-compose -f docker-compose.ssoserver.yml start # 1 container
 
 $(dirname $0)/updateSmarthost.sh # 1 container
 docker start smarthost
