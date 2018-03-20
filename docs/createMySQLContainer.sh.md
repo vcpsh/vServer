@@ -14,5 +14,6 @@ docker create --name mysql \
 -v /var/data/mysql_conf:/etc/mysql/conf.d \
 -e MYSQL_ROOT_PASSWORD=$sql_root_password \
 --network=dotnet \
+--network=default \
 mysql:latest
 ```
