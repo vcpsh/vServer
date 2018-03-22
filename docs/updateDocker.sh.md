@@ -10,6 +10,7 @@ So kann man mit einer einfachen suche schnell heraus finden wie viele Container 
 numberOfContainer=26
 
 #export env vars for docker compose
+source $(dirname $0)/config.cfg
 export ADMIN_EMAIL=$adminmail
 export HTTPS_METHOD=$HTTPS_METHOD
 
