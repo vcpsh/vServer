@@ -10,8 +10,6 @@ services:
     image: vcpsh/ssoserver
     networks:
       - dotnet
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
 networks:
   dotnet:
    external:

@@ -13,6 +13,8 @@ numberOfContainer=26
 source $(dirname $0)/config.cfg
 export ADMIN_EMAIL=$adminmail
 export HTTPS_METHOD=$HTTPS_METHOD
+export ASPNETCORE_ENVIRONMENT=$ASPNETCORE_ENVIRONMENT
+export ASPNETCORE_URLS=$ASPNETCORE_URLS
 
 #networks
 docker network create dotnet

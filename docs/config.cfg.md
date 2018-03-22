@@ -15,6 +15,8 @@ domains[0]=vcp.sh
 domains[1]=vcp-sh.de
 VIRTUAL_PROTO=https
 HTTPS_METHOD=noredirect
+ASPNETCORE_URLS="http://0.0.0.0:80"
+ASPNETCORE_ENVIRONMENT="Production"
 
 REDIRECTDOMAINS="Domain1from, domain2from:domain1to;domain11from:domain2to"
 REDIRECTDOMAINSTWO="Domain1from, domain2from:domain1to;domain11from:domain2to"
