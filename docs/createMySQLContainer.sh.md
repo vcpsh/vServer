@@ -16,4 +16,6 @@ docker create --name mysql \
 --network=dotnet \
 --network=default \
 mysql:latest
+
+docker network connect dotnet mysql
 ```
