@@ -7,7 +7,7 @@ This scripts start all Services
 docker start mysql
 docker start slapd
 
-docker-compose -f docker-compose.ssoserver.yml start
+docker-compose -f docker-compose.ssoserver.yml -f docker-compose.ssoserver.overrride.yml start
 
 docker start smarthost
 docker start mail-forwarder

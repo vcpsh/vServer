@@ -26,7 +26,7 @@ $(dirname $0)/updateSlapdContainer.sh # 1 container
 docker start slapd
 
 # SingleSignOnServer
-docker-compose -f docker-compose.ssoserver.yml up # 1 container
+docker-compose -f docker-compose.ssoserver.yml -f docker-compose.ssoserver.overrride.yml up # 1 container
 
 $(dirname $0)/updateSmarthost.sh # 1 container
 docker start smarthost
