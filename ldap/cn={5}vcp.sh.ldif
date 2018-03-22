@@ -1,0 +1,76 @@
+
+dn: cn={5}vcp.sh,cn=schema,cn=config
+changetype: modify
+replace: olcAttributeTypes
+olcAttributeTypes: {0}( 1.3.6.1.4.1.50348.1.2.1.1 NAME 'x-sh-vcp-date-of-birth
+ ' EQUALITY generalizedTimeMatch ORDERING generalizedTimeOrderingMatch SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.50348.1.2.1.10 NAME 'x-sh-vcp-vote-end-eve
+ nt' DESC '' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.50348.1.2.1.11 NAME 'x-sh-vcp-vote-start-d
+ ate' DESC '' EQUALITY generalizedTimeMatch ORDERING generalizedTimeOrderingMa
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.50348.1.2.1.12 NAME 'x-sh-vcp-vote-end-dat
+ e' DESC '' EQUALITY generalizedTimeMatch ORDERING generalizedTimeOrderingMatc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.50348.1.2.1.2 NAME 'x-sh-vcp-accession-dat
+ e' EQUALITY generalizedTimeMatch ORDERING generalizedTimeOrderingMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.24 SINGLE-VALUE )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.50348.1.2.1.3 NAME 'x-sh-vcp-gender' SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.50348.1.2.1.4 NAME 'x-sh-vcp-email-verifie
+ d' DESC 'Attribute that indicates if the email of an user is verified.' SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.50348.1.2.1.5 NAME 'x-sh-vcp-admin-verifie
+ d' DESC 'Attributes that indicates if a user is verified by an admin.' SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.50348.1.2.1.6 NAME 'x-sh-vcp-id' DESC 'Att
+ ribute for the vcp id. Only in use for x-sh-vcp-waiting-user' SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.50348.1.2.1.7 NAME 'x-sh-vcp-disabled' DES
+ C 'Attribute that indicates if a group is currently disabled and in read only
+  mode.' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {10}( 1.3.6.1.4.1.50348.1.2.1.8 NAME 'x-sh-vcp-active' DESC
+  '' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+olcAttributeTypes: {11}( 1.3.6.1.4.1.50348.1.2.1.9 NAME 'x-sh-vcp-vote-start-e
+ vent' DESC '' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {12}( 1.3.6.1.4.1.50384.1.2.1.4 NAME 'x-sh-vcp-email' DESC 
+ 'represents an official vcp.sh email adress' SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 SINGLE-VALUE )
+-
+replace: olcObjectClasses
+olcObjectClasses: {0}( 1.3.1.4.1.50348.1.2.2.9 NAME 'x-sh-vcp-waiting-user' SU
+ P top STRUCTURAL MUST ( cn $ description $ uid $ email $ x-sh-vcp-date-of-bir
+ th $ x-sh-vcp-admin-verified $ x-sh-vcp-email-verified ) MAY ( userPassword $
+  x-sh-vcp-id ) )
+olcObjectClasses: {1}( 1.3.6.1.4.1.50348.1.2.2.11 NAME 'x-sh-vcp-vote-entry' D
+ ESC '' SUP top STRUCTURAL MUST ( cn $ memberUid $ x-sh-vcp-active $ x-sh-vcp-
+ vote-start-date $ x-sh-vcp-vote-start-event ) MAY ( x-sh-vcp-vote-end-date $ 
+ x-sh-vcp-vote-end-event ) )
+olcObjectClasses: {2}( 1.3.6.1.4.1.50348.1.2.2.2 NAME 'x-sh-vcp-user' SUP top 
+ STRUCTURAL MUST cn MAY ( userPassword $ uid $ email $ x-sh-vcp-email-verified
+  ) )
+olcObjectClasses: {3}( 1.3.6.1.4.1.50348.1.2.2.3 NAME 'x-sh-vcp-group' DESC 'R
+ epresents a generic group in the vcp' SUP top STRUCTURAL MUST cn MAY ( member
+ Uid $ displayName $ x-sh-vcp-disabled ) )
+olcObjectClasses: {4}( 1.3.6.1.4.1.50348.1.2.2.4 NAME 'x-sh-vcp-tribe' DESC 'R
+ epresents a tribe.' SUP x-sh-vcp-group STRUCTURAL MUST departmentNumber )
+olcObjectClasses: {5}( 1.3.6.1.4.1.50348.1.2.2.5 NAME 'x-sh-vcp-tribe-sl' DESC
+  'Stammesleitungsgruppe' SUP x-sh-vcp-group STRUCTURAL )
+olcObjectClasses:: ezZ9KCAxLjMuNi4xLjQuMS41MDM0OC4xLjIuMi42IE5BTUUgJ3gtc2gtdmN
+ wLXRyaWJlLWdzJyBERVNDICdTdGFtbWVzLUdlc2Now6RmdHNzdGVsbGUnIFNVUCB4LXNoLXZjcC1n
+ cm91cCBTVFJVQ1RVUkFMICk=
+olcObjectClasses: {7}( 1.3.6.1.4.1.50348.1.2.2.7 NAME 'x-sh-vcp-tribe-lr' DESC
+  'Stammeslrdelegierte' SUP x-sh-vcp-group STRUCTURAL )
+olcObjectClasses: {8}( 1.3.6.1.4.1.50348.1.2.2.8 NAME 'x-sh-vcp-tribe-lv' DESC
+  'Stammeslvdelegiertengruppe' SUP x-sh-vcp-group STRUCTURAL )
+olcObjectClasses: {9}( 1.3.6.1.4.1.50348.1.2.2.9 NAME 'x-sh-vcp-division' DESC
+  'Represents a division' SUP x-sh-vcp-group STRUCTURAL MUST departmentNumber 
+ )
+olcObjectClasses: {10}( 1.3.6.1.4.1.50348.1.2.2.1 NAME 'x-sh-vcp-member' DESC 
+ 'Basic objec type for members of the VCP' SUP x-sh-vcp-user STRUCTURAL MUST (
+  sn $ givenName $ departmentNumber $ x-sh-vcp-date-of-birth $ x-sh-vcp-access
+ ion-date $ x-sh-vcp-gender ) MAY ( title $ postalAddress $ homePhone $ mobile
+  $ x-sh-vcp-email ) )
+olcObjectClasses: {11}( 1.3.6.1.4.1.50348.1.2.2.10 NAME 'x-sh-vcp-voted-group'
+  SUP x-sh-vcp-group STRUCTURAL )

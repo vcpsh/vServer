@@ -1,0 +1,3 @@
+dn: cn={5}vcp.sh,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: {5}vcp.sh
