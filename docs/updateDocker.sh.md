@@ -9,6 +9,10 @@ So kann man mit einer einfachen suche schnell heraus finden wie viele Container 
 #!/bin/bash
 numberOfContainer=26
 
+#export env vars for docker compose
+export ADMIN_EMAIL=$adminmail
+export HTTPS_METHOD=$HTTPS_METHOD
+
 #networks
 docker network create dotnet
 
