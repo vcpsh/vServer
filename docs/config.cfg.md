@@ -34,7 +34,7 @@ nextcloud_db_name=nextcloud
 nextcloud_db_password=anotherstrongpassword
 nextcloud_uid=1000
 nextcloud_gid=1000
-nextcloud_tag=11.0 #tag for the containter
+nextcloud_tag=12 #tag for the containter
 
 #Smarthost stuff
 smarthost_password=wedontneednopassword
