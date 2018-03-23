@@ -20,6 +20,8 @@ server {
    location ~ ^/lool/(.*)/ws$ {
        proxy_pass https://collabora:9980;
        proxy_set_header Host $http_host;
+       proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
        proxy_read_timeout 36000s;
    }
 
@@ -33,6 +35,8 @@ server {
    location ^~ /lool/adminws {
        proxy_pass https://collabora:9980;
        proxy_set_header Host $http_host;
+       proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
        proxy_read_timeout 36000s;
    }
 }
