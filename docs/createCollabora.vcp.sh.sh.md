@@ -14,7 +14,7 @@ SCRIPTPATH=`pwd -P` #Get the Fullpath
 popd > /dev/null
 
 docker create --name collabora.vcp.sh \
-    -e 'domain=cloud\\.vcp\\.sh' \
+    -e 'domain=https://cloud\\.vcp\\.sh' \
     --expose 9980 \
     --cap-add MKNOD \
     collabora/code

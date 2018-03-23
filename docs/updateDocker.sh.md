@@ -54,6 +54,7 @@ $(dirname $0)/updateNextcloudDocker.sh # 1 container
 docker start nextcloud
 $(dirname $0)/updatePfila.vcp.shDocker.sh # 1 container
 docker start pfila.vcp.sh
+$(dirname $0)/updateCollabora.vcp.sh # 1 container
 
 $(dirname $0)/updateVCP.shDocker.sh # 1 container
 docker start vcp.sh
