@@ -1,0 +1,10 @@
+dn: cn=schema,cn=config
+changetype: modify
+add: olcAttributeTypes
+olcAttributeTypes: ( OLcfgOvAt:12.1 NAME 'olcPPolicyDefault' DESC 'DN of a pwdPolicy object for uncustomized objects' SYNTAX OMsDN SINGLE-VALUE )
+olcAttributeTypes: ( OLcfgOvAt:12.2 NAME 'olcPPolicyHashCleartext' DESC 'Hash passwords on add or modify' SYNTAX OMsBoolean SINGLE-VALUE )
+olcAttributeTypes: ( OLcfgOvAt:12.3 NAME 'olcPPolicyUseLockout' DESC 'Warn clients with AccountLocked' SYNTAX OMsBoolean SINGLE-VALUE )
+olcAttributeTypes: ( OLcfgOvAt:12.4 NAME 'olcPPolicyForwardUpdates' DESC 'Allow policy state updates to be forwarded via updateref' SYNTAX OMsBoolean SINGLE-VALUE )
+-
+add: olcObjectClasses
+olcObjectClasses: ( OLcfgOvOc:12.1 NAME 'olcPPolicyConfig' DESC 'Password Policy configuration' SUP olcOverlayConfig STRUCTURAL MAY ( olcPPolicyDefault $ olcPPolicyHashCleartext $ olcPPolicyUseLockout $ olcPPolicyForwardUpdates ) )

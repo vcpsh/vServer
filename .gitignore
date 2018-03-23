@@ -4,3 +4,4 @@ docs/_book
 npm-debug.log
 docs/ownconfig.cfg.md
 ldap_data
+*/*.override.yml.md

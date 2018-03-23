@@ -1,5 +1,7 @@
 # Config File
+
 How to use it:
+
 * Write your config file like the example below
 * Import the config file with `source config.cfg` in your Bash file
 * You can now use `$cool_configname`
@@ -7,12 +9,14 @@ How to use it:
 * Use this file for documentation which vars are available and for what they are
 * Copy the file to `ownconfig.cfg.md` and set your own config
 
-```` bash
+```bash
 #Domain stuff
 domains[0]=vcp.sh
 domains[1]=vcp-sh.de
 VIRTUAL_PROTO=https
 HTTPS_METHOD=noredirect
+ASPNETCORE_URLS="http://0.0.0.0:80"
+ASPNETCORE_ENVIRONMENT="Production"
 
 REDIRECTDOMAINS="Domain1from, domain2from:domain1to;domain11from:domain2to"
 REDIRECTDOMAINSTWO="Domain1from, domain2from:domain1to;domain11from:domain2to"
@@ -21,7 +25,7 @@ REDIRECTDOMAINSTWO="Domain1from, domain2from:domain1to;domain11from:domain2to"
 org_name="\"VCP Schleswig-Holstein\""
 #Letsencrypt
 LETSENCRYPT_TEST=false #Create test certificate?
-adminmail=internet@vcp-sh.de
+adminmail=internet@vcp.sh
 debug=false
 PIWIK_MYSQL_PASSWORD="qwertzui" #best password ever
 
@@ -34,7 +38,7 @@ nextcloud_db_name=nextcloud
 nextcloud_db_password=anotherstrongpassword
 nextcloud_uid=1000
 nextcloud_gid=1000
-nextcloud_tag=11.0 #tag for the containter
+nextcloud_tag=12 #tag for the containter
 
 #Smarthost stuff
 smarthost_password=wedontneednopassword
@@ -75,4 +79,4 @@ function createDomainNames {
 #createDomainNames $subdomains
 #echo $myresult
 source $(dirname $0)/ownconfig.cfg #Import your own config. Mind delete this line in your own config.
-````
+```

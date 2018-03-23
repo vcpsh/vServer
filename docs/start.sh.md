@@ -1,10 +1,13 @@
 # Startskript
+
 This scripts start all Services
 
-``` bash
+```bash
 #!/bin/bash
 docker start mysql
 docker start slapd
+
+docker-compose -f docker-compose.ssoserver.yml -f docker-compose.ssoserver.override.yml start
 
 docker start smarthost
 docker start mail-forwarder
