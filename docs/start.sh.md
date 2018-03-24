@@ -31,7 +31,8 @@ docker start s.vcp.sh
 docker start community.vcp.sh
 docker start openslides.vcp.sh
 docker start alderaan.vcp.sh
-
+docker start collabora.vcp.sh
+docker start collabora-nginx.vcp.sh
 docker start graphite
 docker start icinga.vcp.sh
 ```
