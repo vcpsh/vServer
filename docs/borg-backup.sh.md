@@ -46,26 +46,29 @@ repopfad="$zielpfad"/"$repository"
 
 # check for root
 if [ $(id -u) -ne 0 ] && [ "$rootuser" == "ja" ]; then
-  echo "Sicherung muss als Root-User ausgeführt werden."
+  echo "Sicherung muss als Root-User ausgeführt werden." > borg.out
   exit 1
 fi
 
 # Init borg-repo if absent
 if [ ! -d $repopfad ]; then
   borg init --encryption=$verschluesselung $repopfad
-  echo "Borg-Repository erzeugt unter $repopfad"
+  echo "Borg-Repository erzeugt unter $repopfad" >> borg.out
 fi
 
 # backup data
 SECONDS=0
-echo "Start der Sicherung $(date)."
+echo "Start der Sicherung $(date)." > borg.out
 
-borg create --compression $kompression --exclude-caches --one-file-system -v --stats --progress \
-            $repopfad::'{hostname}-{now:%Y-%m-%d-%H%M%S}' $sicherung
+borg create --compression $kompression --exclude-caches --one-file-system -v --stats \
+            $repopfad::'{hostname}-{now:%Y-%m-%d-%H%M%S}' $sicherung >> borg.out 2>&1
 
-echo "Ende der Sicherung $(date). Dauer: $SECONDS Sekunden"
+echo "Ende der Sicherung $(date). Dauer: $SECONDS Sekunden" >> borg.out
 
 # prune archives
-borg prune -v --list $repopfad --prefix '{hostname}-' $pruning
+borg prune -v --list $repopfad --prefix '{hostname}-' $pruning >> borg.out 2>&1
+
+backupText=cat borg.out
+docker exec smarthost  /bin/sh -c 'echo "$backupText" | mailx -s "subject" -r catchall@vcp.sh internet@vcp.sh'
 
 ```
