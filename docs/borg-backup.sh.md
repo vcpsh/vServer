@@ -10,7 +10,7 @@ source $(dirname $0)/config.cfg
 export BORG_PASSPHRASE=$borg_passphrase
 # Hier Pfad zum Sicherungsmedium angeben.
 # z.B. zielpfad="/media/peter/HD_Backup"
-zielpfad="ssh://vcpbackup@vcp-backup.dnshome.de/home/vcpbackup/backup"
+zielpfad="ssh://pi@vcp-backup.dnshome.de/home/backup/backup"
 
 # Hier Namen des Repositorys angeben.
 # z.B. repository="borg"
