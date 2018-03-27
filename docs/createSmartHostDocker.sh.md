@@ -3,6 +3,7 @@ This one: https://hub.docker.com/r/lirt/smart-host-postfix-docker/
 
 ``` bash
 source $(dirname $0)/config.cfg
+mkdir -p /var/data/smarthost/temp
 
 docker create \
    --name smarthost \
@@ -10,6 +11,7 @@ docker create \
    -e EXIM_SMARTHOST=mxf960.netcup.net:25 \
    -e EXIM_PASSWORD=mxf960.netcup.net:$smarthost_username:$smarthost_password \
    -e EXIM_ALLOWED_SENDERS=172.17.0.0/24:127.0.0.1 \
+   -v /var/data/smarthost/temp:/temp
     imixs/exim4
 
 
