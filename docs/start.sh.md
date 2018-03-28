@@ -24,6 +24,7 @@ docker start gruppenverwaltung
 docker start diefalken.vcp.sh
 docker start website-redirects
 docker start lists.vcp.sh
+docker start gitlab.vcp.sh
 # archived
 # docker start freepolis.vcp.sh
 docker start averliekers.vcp.sh
