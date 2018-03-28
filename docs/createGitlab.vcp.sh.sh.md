@@ -20,9 +20,9 @@ docker create --name gitlab.vcp.sh \
     -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --expose 80 \
     --publish 8022:22
-    --volume /var/data/gitlab/config:/etc/gitlab \
-    --volume /var/data/gitlab/logs:/var/log/gitlab \
-    --volume /var/data/gitlab/data:/var/opt/gitlab \
+    -v /var/data/gitlab/config:/etc/gitlab \
+    -v /var/data/gitlab/logs:/var/log/gitlab \
+    -v /var/data/gitlab/data:/var/opt/gitlab \
     gitlab/gitlab-ce:latest
 
 
