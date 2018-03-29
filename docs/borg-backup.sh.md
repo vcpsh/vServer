@@ -26,7 +26,7 @@ verschluesselung="keyfile"
 
 # Hier die Art der Kompression angeben
 # z.B. kompression="none"
-kompression="lzma"
+kompression="lz4"
 
 # Hier angeben, ob vor der Ausführung von BorgBackup auf vorhandene Root-Rechte geprüft werden soll
 # z.B. rootuser="ja"
