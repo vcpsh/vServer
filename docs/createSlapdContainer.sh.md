@@ -24,6 +24,7 @@ docker create --name slapd \
 -p 389:389 \
 --network=dotnet \
 --network=default \
+--network=slapd \
 vcpsh/slapd:latest
 
 docker network connect dotnet slapd

@@ -7,7 +7,7 @@ So kann man mit einer einfachen suche schnell heraus finden wie viele Container 
 
 ```bash
 #!/bin/bash
-numberOfContainer=29
+numberOfContainer=30
 
 #export env vars for docker compose
 source $(dirname $0)/config.cfg
@@ -70,6 +70,7 @@ $(dirname $0)/updatePfila.vcp.shDocker.sh # 1 container
 docker start pfila.vcp.sh
 $(dirname $0)/updateCollabora.vcp.sh # 1 container # 1 container
 $(dirname $0)/updateGitlab.vcp.sh.sh # 1 container
+$(dirname $0)/updateLdapadmin.vcp.sh # 1 container
 $(dirname $0)/updateVCP.shDocker.sh # 1 container
 docker start vcp.sh
 $(dirname $0)/updateAlderaan.vcp.shDocker.sh # 1 container
