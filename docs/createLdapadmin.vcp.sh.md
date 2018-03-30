@@ -23,5 +23,7 @@ docker create --name ldapadmin.vcp.sh \
     --env PHPLDAPADMIN_HTTPS=false \
     --expose 80 \
 osixia/phpldapadmin
+
+docker network connect slapd ldapadmin.vcp.sh
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````

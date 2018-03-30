@@ -20,11 +20,13 @@ docker create --name gitlab.vcp.sh \
     -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --expose 80 \
     --publish 8022:22 \
+    --network=slapd \
+    --network=default \
     -v /var/data/gitlab/config:/etc/gitlab \
     -v /var/data/gitlab/logs:/var/log/gitlab \
     -v /var/data/gitlab/data:/var/opt/gitlab \
     gitlab/gitlab-ce:latest
 
-
+docker network connect slapd gitlab.vcp.sh
 #-e "VIRTUAL_PROTO=$VIRTUAL_PROTO" \
 ````
