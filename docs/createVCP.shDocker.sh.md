@@ -19,13 +19,12 @@ docker create --name vcp.sh \
     -e "WEB_DOCUMENT_ROOT=/app/public" \
     -e "HTTPS_METHOD=$HTTPS_METHOD" \
     --link mysql:mysql \
+    --link slapd:ldap \
     --link nextcloud:nextcloud \
     --link smarthost:smarthost \
-    --network slapd \
-    --network default \
     --expose 80 \
     -v /var/data/vcp.sh/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
-webdevops/php-nginx:ubuntu-14.04
+webdevops/php-nginx:latest
 #- \
 ```
