@@ -22,6 +22,7 @@ docker create --name vcp.sh \
     --link nextcloud:nextcloud \
     --link smarthost:smarthost \
     --network slapd \
+    --network default \
     --expose 80 \
     -v /var/data/vcp.sh/www:/app \
     -v $SCRIPTPATH/nginxChildVhost.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf \
